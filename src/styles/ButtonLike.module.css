@@ -1,0 +1,16 @@
+.Like {
+  height: 5vh;
+  width: 5vh;
+  background-color: #12b0c9;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Like img {
+  margin-top: 10%;
+  height: 3vh;
+  width: 3vh;
+  border-radius: 0%;
+}

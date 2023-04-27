@@ -1,0 +1,21 @@
+.paginacion {
+  text-align: center;
+  color: #6afb32;
+  font-size: 1.5rem;
+  margin-inline: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-text-stroke: 0.5px #000000;
+}
+.paginacion button {
+  background-color: #6afb32;
+  border: none;
+  border-radius: 20%;
+  height: 3vh;
+  margin-inline: 2%;
+}
+
+.oculto {
+  visibility: hidden;
+}

@@ -1,0 +1,30 @@
+.input_with_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  margin-top: 1vh;
+  z-index: 1;
+}
+
+.input_with_button input[type="text"] {
+  width: 40%;
+  font-size: 2rem;
+  border: rgb(203, 203, 203) 1px solid;
+  border: none;
+  border: solid 1px #000000;
+  border-radius: 10px;
+  border: none;
+  box-shadow: rgb(255, 255, 255) 0px 2px 5px -1px,
+    rgb(255, 255, 255) 0px 1px 3px -1px;
+}
+
+.input_with_button button:hover {
+  background-image: #12b0c9;
+}
+
+@media (max-width: 560px) {
+  .input_with_button input[type="text"] {
+    font-size: 1.5rem;
+  }
+}

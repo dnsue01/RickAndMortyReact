@@ -1,0 +1,32 @@
+.frontPage {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  position: relative;
+  min-height: 100vh;
+}
+
+h1 {
+  margin: 0px;
+}
+.characters {
+  color: white;
+  margin-left: 8.6%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 30vh);
+  gap: 2vh;
+  padding: 1vh;
+  justify-content: center;
+}
+
+@media (max-width: 560px) {
+  .moviesGrid {
+    grid-template-columns: 100%;
+  }
+  .MainCharaters {
+    grid-template-columns: 50%;
+  }
+}

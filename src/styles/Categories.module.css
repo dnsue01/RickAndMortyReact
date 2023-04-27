@@ -1,0 +1,29 @@
+.categorias {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.categoria {
+  height: 10vh;
+  width: 4vw;
+  color: #12b0c9;
+  -webkit-text-stroke: 0.5px #c8dd5d;
+  text-align: center;
+  margin-inline: 8vh;
+  font-size: 1.5rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.categoria:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 560px) {
+  .categoria {
+    font-size: 1rem;
+  }
+}
