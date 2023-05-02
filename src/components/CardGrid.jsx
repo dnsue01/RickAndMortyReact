@@ -24,12 +24,15 @@ const CardGrid = () => {
     localStorage.getItem("data") ? JSON.parse(localStorage.getItem("data")) : []
   );
 
+  const [palabraBuscada, SetPalabraBuscada] = useState("");
+
   useEffect(() => {
     fetchApiData();
   }, [currentPage]);
 
   const fetchApiData = async () => {
     let data;
+
     setnumPag(recortarPage());
     if (!Apis.includes(currentPage)) {
       try {
@@ -93,16 +96,22 @@ const CardGrid = () => {
     setData(newDatas);
     localStorage.setItem("data", JSON.stringify(newDatas));
   }
-
+  function buscar(palabra) {
+    SetPalabraBuscada(palabra);
+  }
   if (!personajes) {
     return null;
   }
 
   return (
     <section>
-      <Nav />
+      <Nav buscar={buscar} />
 
-      <CardList personajes={personajes} showModal={ShowModal} />
+      <CardList
+        personajes={personajes}
+        showModal={ShowModal}
+        palabraBuscada={palabraBuscada}
+      />
       {personaje && (
         <Modal
           open={openModal}
@@ -110,11 +119,13 @@ const CardGrid = () => {
           onClose={() => setopenModals(false)}
         />
       )}
-      <Pagination
-        numPag={numPag}
-        changePrevious={changePrevious}
-        changeNext={changeNext}
-      />
+      {palabraBuscada == "" && (
+        <Pagination
+          numPag={numPag}
+          changePrevious={changePrevious}
+          changeNext={changeNext}
+        />
+      )}
     </section>
   );
 };

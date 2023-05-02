@@ -1,11 +1,7 @@
 import styles from "../styles/searchBar.module.css";
 import React from "react";
 
-const SearchBar = () => {
-  function buscar(palabra) {
-    console.log(palabra);
-  }
-
+const SearchBar = ({ buscar }) => {
   return (
     <>
       <div className={styles.input_with_button}>

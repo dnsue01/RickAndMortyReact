@@ -31,6 +31,7 @@ function Card({
           onClick={() => showModal(personaje)}
         />
       </figure>
+
       <h3>{personaje.name}</h3>
       <section className={styles.like}>
         <Like like={isLiked} likeCLick={changeLikeStatus} />

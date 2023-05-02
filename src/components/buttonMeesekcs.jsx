@@ -1,15 +1,8 @@
-import styles from "../styles/ButtonMeeseks.module.css";
+import styled from "styled-components";
 
-const ButtonMeesekcs = () => {
-  return (
-    <>
-      <button type="button">
-        <div className={styles.rectangulo}>
-          <div className={styles.circulo}></div>
-        </div>
-      </button>
-    </>
-  );
-};
-
-export default ButtonMeesekcs;
+export const Button = styled.button`
+  background: white;
+  color: red;
+  font-size: 1rem;
+  cursor: pointer;
+`;

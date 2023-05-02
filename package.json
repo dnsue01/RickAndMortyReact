@@ -12,11 +12,12 @@
     "react-is": "18.2",
     "react-scripts": "^5.0.1",
     "reactstrap": "^9.1.9",
-    "styled-components": "^5.3.9",
+    "styled-components": "^5.3.10",
     "sweetalert2": "^11.7.3",
     "sweetalert2-react-content": "^5.0.7",
     "web-vitals": "^3.3.1",
-    "webpack": "^5.79.0"
+    "webpack": "^5.79.0",
+    "steadys-styled-componets-library": "1.0.2"
   },
   "scripts": {
     "start": "react-scripts start",

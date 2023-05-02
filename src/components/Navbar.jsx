@@ -4,7 +4,7 @@ import styles from "../styles/Navbar.module.css";
 import SearchBar from "./Searchbar";
 import Categories from "./Categories";
 
-export default function Nav() {
+export default function Nav({ buscar }) {
   return (
     <header>
       <section className={styles.navbar}>
@@ -14,7 +14,7 @@ export default function Nav() {
       </section>
       <Categories />
       <section className={styles.search}>
-        <SearchBar />
+        <SearchBar buscar={buscar} />
       </section>
     </header>
   );

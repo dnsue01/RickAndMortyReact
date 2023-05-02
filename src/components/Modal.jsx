@@ -7,16 +7,6 @@ import female from "../resources/female.png";
 import styles from "../styles/Modal.module.css";
 
 export default function Modal({ open, personaje, onClose }) {
-  const [isBlur, setIsBlur] = useState(false);
-
-  const handleBlur = () => {
-    setIsBlur(true);
-  };
-
-  const handleFocus = () => {
-    setIsBlur(false);
-  };
-
   if (!open) {
     return null;
   }
@@ -25,7 +15,7 @@ export default function Modal({ open, personaje, onClose }) {
     <>
       <div className={styles.container}>
         <div className={styles.overlay} onClick={onClose} />
-        <div className={styles.modal} onBlur={handleBlur} onFocus={handleFocus}>
+        <div className={styles.modal}>
           <center>
             <h1 onClick={onClose} className={styles.close}>
               x
