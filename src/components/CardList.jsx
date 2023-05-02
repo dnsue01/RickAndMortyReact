@@ -30,7 +30,7 @@ const CardList = ({ personajes, showModal, palabraBuscada }) => {
   };
 
   let infoLocal =
-    JSON.parse(localStorage.getItem("likedCharacters")) !== undefined
+    JSON.parse(localStorage.getItem("likedCharacters")) != undefined
       ? JSON.parse(localStorage.getItem("likedCharacters"))
       : [];
 

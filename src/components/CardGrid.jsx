@@ -6,6 +6,8 @@ import Modal from "./Modal";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
+import useFetch from "./useFetch";
+
 const CardGrid = () => {
   const API = "https://rickandmortyapi.com/api/character?page=1";
 
@@ -29,6 +31,19 @@ const CardGrid = () => {
   useEffect(() => {
     fetchApiData();
   }, [currentPage]);
+
+  const {
+    data: joke,
+    loading,
+    error,
+    refetch,
+  } = useFetch("https://v2.jokeapi.dev/joke/Any");
+
+  if (loading) {
+    console.log(loading);
+    return <h1> LOADING...</h1>;
+  }
+  if (error) console.log(error);
 
   const fetchApiData = async () => {
     let data;
@@ -106,7 +121,9 @@ const CardGrid = () => {
   return (
     <section>
       <Nav buscar={buscar} />
-
+      <h1>
+        {joke?.setup} : {joke?.delivery}{" "}
+      </h1>
       <CardList
         personajes={personajes}
         showModal={ShowModal}
