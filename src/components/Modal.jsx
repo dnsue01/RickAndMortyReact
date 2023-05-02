@@ -1,8 +1,4 @@
-import React, { useState } from "react";
-import alive from "../resources/alive.png";
-import dead from "../resources/dead.png";
-import male from "../resources/male.png";
-import female from "../resources/female.png";
+import React from "react";
 
 import styles from "../styles/Modal.module.css";
 
@@ -47,18 +43,18 @@ export default function Modal({ open, personaje, onClose }) {
               <div className={styles.detalle}>
                 <h1>Status:</h1>
               </div>
-              {personaje.status == "Alive" && (
+              {personaje.status === "Alive" && (
                 <div className={styles.alive}>
                   <h1>{personaje.status}</h1>
                 </div>
               )}
 
-              {personaje.status == "Dead" && (
+              {personaje.status === "Dead" && (
                 <div className={styles.dead}>
                   <h1>{personaje.status}</h1>
                 </div>
               )}
-              {personaje.status == "unknown" && (
+              {personaje.status === "unknown" && (
                 <div className={styles.unknown}>
                   <h1>{personaje.status}</h1>
                 </div>

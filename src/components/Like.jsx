@@ -5,8 +5,8 @@ import heart from "../resources/heart.png";
 const Like = ({ like, likeCLick }) => {
   return (
     <div className={styles.Like}>
-      {like && <img onClick={likeCLick} src={heartBold} altc={"like"} />}
-      {like === false && <img onClick={likeCLick} src={heart} altc={"like"} />}
+      {like && <img onClick={likeCLick} src={heartBold} alt={"dislike"} />}
+      {like === false && <img onClick={likeCLick} src={heart} alt={"like"} />}
     </div>
   );
 };

@@ -7,13 +7,14 @@ const CardList = ({ personajes, showModal, palabraBuscada }) => {
   let API_2 = `https://rickandmortyapi.com/api/character/?name=${palabraBuscada}`;
 
   const [personajesBuscados, setPersonajesBuscados] = useState(personajes);
+
   useEffect(() => {
     fetchApiData();
   }, [palabraBuscada, personajes]);
 
   const fetchApiData = async () => {
     let data;
-    if (palabraBuscada != "") {
+    if (palabraBuscada !== "") {
       try {
         const response = await fetch(API_2);
         if (response.ok) {
@@ -29,7 +30,7 @@ const CardList = ({ personajes, showModal, palabraBuscada }) => {
   };
 
   let infoLocal =
-    JSON.parse(localStorage.getItem("likedCharacters")) != undefined
+    JSON.parse(localStorage.getItem("likedCharacters")) !== undefined
       ? JSON.parse(localStorage.getItem("likedCharacters"))
       : [];
 

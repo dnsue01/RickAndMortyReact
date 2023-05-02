@@ -119,7 +119,7 @@ const CardGrid = () => {
           onClose={() => setopenModals(false)}
         />
       )}
-      {palabraBuscada == "" && (
+      {palabraBuscada === "" && (
         <Pagination
           numPag={numPag}
           changePrevious={changePrevious}
