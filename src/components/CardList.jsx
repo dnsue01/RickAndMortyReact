@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import Card from "./Card";
-import styles from "../styles/CardGrid.module.css";
 import LikedCharacters from "./LikedCharacters";
+import AllCharacters from "./AllCharacters";
 
 const CardList = ({ personajes, showModal, palabraBuscada }) => {
+  //api para buscar personajes concreetos
   let API_2 = `https://rickandmortyapi.com/api/character/?name=${palabraBuscada}`;
 
   const [personajesBuscados, setPersonajesBuscados] = useState(personajes);
-
+  const [filter, setFilter] = useState("Medium");
   useEffect(() => {
     fetchApiData();
   }, [palabraBuscada, personajes]);
@@ -20,8 +20,6 @@ const CardList = ({ personajes, showModal, palabraBuscada }) => {
         if (response.ok) {
           data = await response.json();
           setPersonajesBuscados(data.results);
-        } else {
-          console.log("tonto");
         }
       } catch (error) {}
     } else {
@@ -29,8 +27,9 @@ const CardList = ({ personajes, showModal, palabraBuscada }) => {
     }
   };
 
+  //si personajes del localstorage
   let infoLocal =
-    JSON.parse(localStorage.getItem("likedCharacters")) != undefined
+    JSON.parse(localStorage.getItem("likedCharacters")) !== undefined
       ? JSON.parse(localStorage.getItem("likedCharacters"))
       : [];
 
@@ -52,10 +51,12 @@ const CardList = ({ personajes, showModal, palabraBuscada }) => {
     const updatedLikedCards = likedCards.filter(
       (card) => card.id !== personaje.id
     );
-
     localStorage.setItem("likedCharacters", JSON.stringify(updatedLikedCards));
   };
 
+  const onFilter = (e) => {
+    setFilter(e.target.value);
+  };
   return (
     <>
       {likedCards.length > 0 && (
@@ -68,23 +69,16 @@ const CardList = ({ personajes, showModal, palabraBuscada }) => {
         />
       )}
 
-      <h1 className={styles.characters}>All characters</h1>
-      <article className={styles.cardGrid}>
-        {personajesBuscados.map((personaje) => (
-          <div key={personaje.id}>
-            <Card
-              personaje={personaje}
-              addToLikedCards={addToLikedCards}
-              setLikedCards={setLikedCards}
-              removeFromLikedCards={removeFromLikedCards}
-              showModal={showModal}
-              isLiked={JSON.stringify(infoLocal).includes(
-                JSON.stringify(personaje)
-              )}
-            />
-          </div>
-        ))}
-      </article>
+      <AllCharacters
+        personajes={personajesBuscados}
+        addToLikedCards={addToLikedCards}
+        setLikedCards={setLikedCards}
+        removeFromLikedCards={removeFromLikedCards}
+        showModal={showModal}
+        infoLocal={infoLocal}
+        onFilter={onFilter}
+        filter={filter}
+      />
     </>
   );
 };

@@ -9,6 +9,7 @@
   width: 4vw;
   color: #12b0c9;
   -webkit-text-stroke: 0.5px #c8dd5d;
+  text-shadow: 5px 1px 11px rgba(0, 0, 0, 1);
   text-align: center;
   margin-inline: 8vh;
   font-size: 1.5rem;

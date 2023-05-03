@@ -23,22 +23,8 @@ function useFetch(url) {
 
     }, [url]);
 
-    const refetch = () => {
-        setLoading(true);
-        fetch
-            (url)
-            .then((response) => {
-                setData(response.data.json());
-            })
-            .catch((err) => {
-                setError(err);
-            })
-            .finally(() => {
-                setLoading(false);
-            });
-    };
 
-    return { data, loading, error, refetch };
+    return { data, loading, error };
 }
 
 export default useFetch;
