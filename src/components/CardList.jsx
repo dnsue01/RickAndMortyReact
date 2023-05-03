@@ -3,18 +3,19 @@ import LikedCharacters from "./LikedCharacters";
 import AllCharacters from "./AllCharacters";
 
 const CardList = ({ personajes, showModal, palabraBuscada }) => {
-  //api para buscar personajes concreetos
-  let API_2 = `https://rickandmortyapi.com/api/character/?name=${palabraBuscada}`;
+  const [filter, setFilter] = useState();
+  //api para buscar personajes concretos
+  let API_2 = `https://rickandmortyapi.com/api/character/?name=${palabraBuscada}&&status=${filter}`;
 
   const [personajesBuscados, setPersonajesBuscados] = useState(personajes);
-  const [filter, setFilter] = useState("Medium");
+
   useEffect(() => {
     fetchApiData();
-  }, [palabraBuscada, personajes]);
+  }, [palabraBuscada, personajes, filter]);
 
   const fetchApiData = async () => {
     let data;
-    if (palabraBuscada !== "") {
+    if (palabraBuscada !== "" || filter) {
       try {
         const response = await fetch(API_2);
         if (response.ok) {
@@ -56,6 +57,7 @@ const CardList = ({ personajes, showModal, palabraBuscada }) => {
 
   const onFilter = (e) => {
     setFilter(e.target.value);
+    console.log(filter);
   };
   return (
     <>
