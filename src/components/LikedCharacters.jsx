@@ -3,19 +3,19 @@ import Card from "./Card";
 import styles from "../styles/CardGrid.module.css";
 
 export default function LikedCharacters({
-  personajes,
+  characters,
   addToLikedCards,
   setLikedCards,
   removeFromLikedCards,
   showModal,
 }) {
-  if (personajes.length < 1) return null;
+  if (characters.length < 1) return null;
 
   return (
     <>
       <h1 className={styles.characters}>Liked characters</h1>
       <article className={styles.cardGrid}>
-        {personajes.slice(0, 5).map((personaje) => {
+        {characters.slice(0, 5).map((personaje) => {
           return (
             <div key={personaje.id}>
               <Card

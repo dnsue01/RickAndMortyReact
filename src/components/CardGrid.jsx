@@ -5,17 +5,18 @@ import Pagination from "./Pagination";
 import Modal from "./Modal";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import useFetch from "./useFetch";
+import useFetch from "../services/useFetch";
 
 const CardGrid = () => {
-  //api
-  const API = "https://rickandmortyapi.com/api/character?page=1";
-  const [currentPage, setCurrentPage] = useState(API);
-
   //paginacion
-  const [nextPage, setNextPage] = useState();
-  const [prevPage, setPrevPage] = useState();
-  const [numPag, setnumPag] = useState();
+  const [numPage, setnumPag] = useState(1);
+  const [maxPages, setmaxPages] = useState(42);
+
+  //api
+  const [Api, setAPi] = useState(
+    `https://rickandmortyapi.com/api/character?page=${numPage}`
+  );
+  const [currentPage, setCurrentPage] = useState(Api);
 
   //modal
   const [openModal, setopenModals] = useState(false);
@@ -23,31 +24,28 @@ const CardGrid = () => {
 
   //guardar en local
   const [Apis, setApis] = useState(
-    localStorage.getItem("urls") ? localStorage.getItem("urls") : []
+    localStorage.getItem("urls") ? JSON.parse(localStorage.getItem("urls")) : []
   );
 
   const [dataLocal, setData] = useState(
     localStorage.getItem("data") ? JSON.parse(localStorage.getItem("data")) : []
   );
-
+  console.log(Apis.includes(Api));
   //buscador
   const [palabraBuscada, SetPalabraBuscada] = useState("");
 
-  const { data, loading, error } = useFetch(currentPage);
+  const { data, loading, error } = useFetch(Api);
 
   //cambia al cambiar la api
   useEffect(() => {
     if (data) {
-      setNextPage(data.info.next);
-      setPrevPage(data.info.prev);
-
-      setnumPag(recortarPage());
-      if (!Apis.includes(currentPage)) {
-        guardarlocalUrl(currentPage);
+      if (!Apis.includes(Api)) {
+        guardarlocalUrl(Api);
         guardarlocalData(data);
+        setmaxPages(data.info.pages);
       }
     }
-  }, [data]);
+  }, [currentPage, data]);
 
   function ShowModal(personaje) {
     setPersonaje(personaje);
@@ -55,26 +53,20 @@ const CardGrid = () => {
   }
 
   //paginacion
-  function recortarPage() {
-    return currentPage.slice(47);
-  }
 
-  function changePrevious() {
-    setnumPag(recortarPage);
-    setCurrentPage(prevPage);
-  }
-  function changeNext() {
-    setnumPag(recortarPage);
-    setPrevPage(currentPage);
-    setCurrentPage(nextPage);
+  function change(numPag) {
+    const newApi = `https://rickandmortyapi.com/api/character?page=${numPag}`;
+    setnumPag(numPag);
+    setAPi(newApi);
+    setCurrentPage(newApi);
   }
 
   //guardar en local
 
   function guardarlocalUrl(data) {
-    const Api = [...Apis, data];
-    setApis(Api);
-    localStorage.setItem("urls", Api);
+    const Api2 = [...Apis, data];
+    setApis(Api2);
+    localStorage.setItem("urls", JSON.stringify(Api2));
   }
   function guardarlocalData(newData) {
     const newDatas = [...dataLocal, newData];
@@ -87,9 +79,14 @@ const CardGrid = () => {
     SetPalabraBuscada(palabra);
   }
 
-  //no se renderiza hasta que haya personajes
+  //no se renderiza hasta que haya characters
   if (loading || !data) {
-    return <h1>LOADING...</h1>;
+    return (
+      <>
+        {" "}
+        <Nav buscar={buscar} /> <h1>LOADING...</h1>
+      </>
+    );
   }
 
   if (error) {
@@ -102,14 +99,14 @@ const CardGrid = () => {
     });
   }
 
-  const { results: personajes } = data;
+  const { results: characters } = data;
 
   return (
     <section>
       <Nav buscar={buscar} />
 
       <CardList
-        personajes={personajes}
+        characters={characters}
         showModal={ShowModal}
         palabraBuscada={palabraBuscada}
       />
@@ -122,11 +119,7 @@ const CardGrid = () => {
         />
       )}
       {palabraBuscada === "" && (
-        <Pagination
-          numPag={numPag}
-          changePrevious={changePrevious}
-          changeNext={changeNext}
-        />
+        <Pagination numPage={numPage} change={change} maxPages={maxPages} />
       )}
     </section>
   );

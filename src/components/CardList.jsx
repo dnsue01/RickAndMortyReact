@@ -1,36 +1,40 @@
 import React, { useState, useEffect } from "react";
 import LikedCharacters from "./LikedCharacters";
 import AllCharacters from "./AllCharacters";
+import Pagination from "./Pagination";
 
-const CardList = ({ personajes, showModal, palabraBuscada }) => {
-  const [filter, setFilter] = useState();
-  //api para buscar personajes concretos
-  let API_2 = `https://rickandmortyapi.com/api/character/?name=${palabraBuscada}&&status=${filter}`;
+const CardList = ({ characters, showModal, palabraBuscada }) => {
+  const [filter, setFilter] = useState("");
+  const [numPage, setnumPag] = useState(1);
+  const [maxPages, setmaxPages] = useState(1);
 
-  const [personajesBuscados, setPersonajesBuscados] = useState(personajes);
+  let api = `https://rickandmortyapi.com/api/character/?name=${palabraBuscada}&&status=${filter}&&page=${numPage}`;
+
+  const [charactersBuscados, setPersonajesBuscados] = useState(characters);
 
   useEffect(() => {
     fetchApiData();
-  }, [palabraBuscada, personajes, filter]);
+  }, [characters, filter, api, maxPages]);
 
   const fetchApiData = async () => {
     let data;
     if (palabraBuscada !== "" || filter) {
       try {
-        const response = await fetch(API_2);
+        const response = await fetch(api);
         if (response.ok) {
           data = await response.json();
           setPersonajesBuscados(data.results);
+          setmaxPages(data.info.pages);
         }
       } catch (error) {}
     } else {
-      setPersonajesBuscados(personajes);
+      setPersonajesBuscados(characters);
     }
   };
 
-  //si personajes del localstorage
+  //si characters del localstorage
   let infoLocal =
-    JSON.parse(localStorage.getItem("likedCharacters")) !== undefined
+    JSON.parse(localStorage.getItem("likedCharacters")) !== null
       ? JSON.parse(localStorage.getItem("likedCharacters"))
       : [];
 
@@ -56,14 +60,20 @@ const CardList = ({ personajes, showModal, palabraBuscada }) => {
   };
 
   const onFilter = (e) => {
-    setFilter(e.target.value);
-    console.log(filter);
+    let filtro = e.target.value;
+    setFilter(filtro);
+    api = `https://rickandmortyapi.com/api/character/?name=${palabraBuscada}&&status=${filtro}&&page=${numPage}`;
   };
+
+  function change(numPag) {
+    api = `https://rickandmortyapi.com/api/character/?name=${palabraBuscada}&&status=${filter}&&page=${numPage}`;
+    setnumPag(numPag);
+  }
   return (
     <>
       {likedCards.length > 0 && (
         <LikedCharacters
-          personajes={likedCards}
+          characters={likedCards}
           addToLikedCards={addToLikedCards}
           setLikedCards={setLikedCards}
           removeFromLikedCards={removeFromLikedCards}
@@ -72,7 +82,7 @@ const CardList = ({ personajes, showModal, palabraBuscada }) => {
       )}
 
       <AllCharacters
-        personajes={personajesBuscados}
+        characters={charactersBuscados}
         addToLikedCards={addToLikedCards}
         setLikedCards={setLikedCards}
         removeFromLikedCards={removeFromLikedCards}
@@ -81,6 +91,9 @@ const CardList = ({ personajes, showModal, palabraBuscada }) => {
         onFilter={onFilter}
         filter={filter}
       />
+      {maxPages > 1 && (
+        <Pagination numPage={numPage} change={change} maxPages={maxPages} />
+      )}
     </>
   );
 };

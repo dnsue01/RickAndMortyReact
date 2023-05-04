@@ -4,7 +4,7 @@ import styles from "../styles/CardGrid.module.css";
 import OptionFilter from "./OptionFilter";
 
 export default function LikedCharacters({
-  personajes,
+  characters,
   addToLikedCards,
   setLikedCards,
   removeFromLikedCards,
@@ -13,7 +13,7 @@ export default function LikedCharacters({
   onFilter,
   filter,
 }) {
-  if (personajes.length < 1) return null;
+  if (characters.length < 1) return null;
 
   return (
     <>
@@ -22,7 +22,7 @@ export default function LikedCharacters({
       <OptionFilter onFilter={onFilter} filter={filter} />
 
       <article className={styles.cardGrid}>
-        {personajes.map((personaje) => {
+        {characters.map((personaje) => {
           return (
             <div key={personaje.id}>
               <Card
