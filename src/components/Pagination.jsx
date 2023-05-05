@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styles from "../styles/Pagination.module.css";
 
 const Pagination = ({ numPage, maxPages, change }) => {
-  console.log(maxPages);
   let nextPage = numPage + 1 <= maxPages ? numPage + 1 : maxPages;
 
   let prevPage = numPage - 1 <= 1 ? 1 : numPage - 1;

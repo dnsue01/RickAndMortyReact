@@ -6,7 +6,7 @@ import Pagination from "./Pagination";
 const CardList = ({ characters, showModal, palabraBuscada }) => {
   const [filter, setFilter] = useState("");
   const [numPage, setnumPag] = useState(1);
-  const [maxPages, setmaxPages] = useState(1);
+  const [maxPages, setmaxPages] = useState(0);
 
   let api = `https://rickandmortyapi.com/api/character/?name=${palabraBuscada}&&status=${filter}&&page=${numPage}`;
 
@@ -28,6 +28,7 @@ const CardList = ({ characters, showModal, palabraBuscada }) => {
         }
       } catch (error) {}
     } else {
+      setmaxPages(0);
       setPersonajesBuscados(characters);
     }
   };

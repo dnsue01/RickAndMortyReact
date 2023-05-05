@@ -30,7 +30,7 @@ const CardGrid = () => {
   const [dataLocal, setData] = useState(
     localStorage.getItem("data") ? JSON.parse(localStorage.getItem("data")) : []
   );
-  console.log(Apis.includes(Api));
+
   //buscador
   const [palabraBuscada, SetPalabraBuscada] = useState("");
 
