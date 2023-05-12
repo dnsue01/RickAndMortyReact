@@ -1,0 +1,45 @@
+.card {
+  margin-top: 10%;
+  height: 40vh;
+  width: 40vh;
+  background-color: rgb(0, 0, 0);
+  border: 0.3vh solid #6afb32;
+  border-radius: 2%;
+}
+
+.card img {
+  padding-top: 4%;
+  height: 20vh;
+  width: 35vh;
+  padding-bottom: 4%;
+}
+
+.centro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.titulo {
+  color: #12b0c9;
+  font-size: 2.5rem;
+  font-weight: bolder;
+}
+.overview {
+  float: left;
+  color: white;
+  font-size: small;
+}
+
+.rating_number {
+  color: red;
+}
+
+.rating {
+  float: left;
+  color: white;
+}
+.number {
+  float: right;
+  color: white;
+}

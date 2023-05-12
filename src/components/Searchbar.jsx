@@ -1,7 +1,7 @@
 import styles from "../styles/searchBar.module.css";
 import React from "react";
 
-const SearchBar = ({ buscar }) => {
+const SearchBar = ({ search }) => {
   return (
     <>
       <div className={styles.input_with_button}>
@@ -11,7 +11,7 @@ const SearchBar = ({ buscar }) => {
           id="bar"
           placeholder=" Mr meeseeks searcher..."
           onChange={(e) => {
-            buscar(e.target.value);
+            search(e.target.value);
           }}
         />
       </div>

@@ -1,12 +1,20 @@
 import styles from "../styles/Categories.module.css";
-
+import { Link } from "react-router-dom";
 const Categories = () => {
   return (
     <>
       <div className={styles.categorias}>
-        <h1 className={styles.categoria}>Characters</h1>
-        <h1 className={styles.categoria}>Locations</h1>
-        <h1 className={styles.categoria}>Episodes</h1>
+        <Link to="/">
+          {" "}
+          <h1 className={styles.categoria}>Characters</h1>
+        </Link>
+        <Link to="locations">
+          {" "}
+          <h1 className={styles.categoria}>Locations</h1>
+        </Link>
+        <Link to="episodes">
+          <h1 className={styles.categoria}>Episodes</h1>
+        </Link>
       </div>
     </>
   );

@@ -1,5 +1,5 @@
-import styles from "../styles/card.module.css";
-import Like from "./Like";
+import styles from "../../styles/card.module.css";
+import Like from "../Like";
 import { useState } from "react";
 
 function Card({

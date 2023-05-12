@@ -9,8 +9,10 @@
 }
 
 .card h3 {
+  height: 4vh;
   font-size: 1rem;
   color: white;
+  row-gap: break-word;
 }
 
 .portal {
@@ -64,6 +66,7 @@
 
 @media (max-width: 560px) {
   .card h3 {
+    height: 1vh;
     font-size: 0.8rem;
   }
 }

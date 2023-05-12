@@ -1,7 +1,6 @@
 import React from "react";
 import Card from "./Card";
-import styles from "../styles/CardGrid.module.css";
-import OptionFilter from "./OptionFilter";
+import styles from "../../styles/CardGrid.module.css";
 
 export default function LikedCharacters({
   characters,
@@ -9,20 +8,14 @@ export default function LikedCharacters({
   setLikedCards,
   removeFromLikedCards,
   showModal,
-  infoLocal,
-  onFilter,
-  filter,
 }) {
   if (characters.length < 1) return null;
 
   return (
     <>
-      <h1 className={styles.characters}>All characters</h1>
-
-      <OptionFilter onFilter={onFilter} filter={filter} />
-
+      <h1 className={styles.characters}>Liked characters</h1>
       <article className={styles.cardGrid}>
-        {characters.map((personaje) => {
+        {characters.slice(0, 5).map((personaje) => {
           return (
             <div key={personaje.id}>
               <Card
@@ -31,9 +24,7 @@ export default function LikedCharacters({
                 setLikedCards={setLikedCards}
                 removeFromLikedCards={removeFromLikedCards}
                 showModal={showModal}
-                isLiked={JSON.stringify(infoLocal).includes(
-                  JSON.stringify(personaje)
-                )}
+                isLiked={true}
               />
             </div>
           );
