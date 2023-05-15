@@ -24,7 +24,7 @@ function Episodes({ searchedWord }) {
   const onFilter = (e) => {
     let filterOp = e.target.value;
     let filterEpi = selectFilter(filterOp);
-    setFilter(filterEpi);
+    setFilter(filterOp);
     let api = `https://rickandmortyapi.com/api/episode/${filterEpi}`;
     SetEpisodes([]);
     setAPi(api);
