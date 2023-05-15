@@ -7,7 +7,8 @@ import withReactContent from "sweetalert2-react-content";
 import useFetch from "../../services/useFetch";
 import CardLoader from "./CardLoader";
 import styles from "../../styles/CardGrid.module.css";
-import OptionFilter from "../OptionFilter";
+import OptionFilter from "./OptionFilter";
+
 const Characters = ({ searchedWord }) => {
   //paginacion
   const [numPage, setnumPag] = useState(1);

@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "./Card";
 import styles from "../../styles/CardGrid.module.css";
-import OptionFilter from "../OptionFilter";
+import OptionFilter from "./OptionFilter";
 
 export default function LikedCharacters({
   characters,
