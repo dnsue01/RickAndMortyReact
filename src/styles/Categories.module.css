@@ -11,8 +11,8 @@
   -webkit-text-stroke: 1px #c8dd5d;
   text-shadow: 5px 1px 11px rgba(0, 0, 0, 1);
   text-align: center;
-  margin-inline: 8vh;
-  font-size: 2.4rem;
+  margin: 8vh;
+  font-size: 2rem;
   text-align: center;
   display: flex;
   justify-content: center;

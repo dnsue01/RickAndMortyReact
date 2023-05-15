@@ -24,11 +24,22 @@
   color: #12b0c9;
   font-size: 2.5rem;
   font-weight: bolder;
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  margin-left: 1%;
+  margin-bottom: 2%;
 }
 .overview {
-  float: left;
   color: white;
   font-size: small;
+  width: 38vh;
+  height: 2vh;
+  overflow: hidden;
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-left: 1%;
 }
 
 .rating_number {
@@ -38,8 +49,10 @@
 .rating {
   float: left;
   color: white;
+  margin-left: 1%;
 }
 .number {
   float: right;
   color: white;
+  margin-right: 1%;
 }

@@ -8,10 +8,7 @@ const Categories = () => {
           {" "}
           <h1 className={styles.categoria}>Characters</h1>
         </Link>
-        <Link to="locations">
-          {" "}
-          <h1 className={styles.categoria}>Locations</h1>
-        </Link>
+
         <Link to="episodes">
           <h1 className={styles.categoria}>Episodes</h1>
         </Link>

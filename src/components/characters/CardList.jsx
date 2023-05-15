@@ -11,7 +11,6 @@ const CardList = ({ characters, showModal, searchedWord }) => {
   const [localCharacters, setLocalCharacters] =
     useLocalStorage("likedCharacters");
 
-  console.log(localCharacters);
   let api = `https://rickandmortyapi.com/api/character/?name=${searchedWord}&&status=${filter}&&page=${numPage}`;
 
   const [searchedCharacters, setSearchedCharacters] = useState(characters);

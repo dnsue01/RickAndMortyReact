@@ -12,7 +12,10 @@
   height: 4vh;
   font-size: 1rem;
   color: white;
-  row-gap: break-word;
+  height: 3vh;
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
 }
 
 .portal {

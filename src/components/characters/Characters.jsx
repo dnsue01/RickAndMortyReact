@@ -15,7 +15,6 @@ const Characters = ({ searchedWord }) => {
   const [Api, setAPi] = useState(
     `https://rickandmortyapi.com/api/character?page=${numPage}`
   );
-  const [currentPage, setCurrentPage] = useState(Api);
 
   //modal
   const [openModal, setopenModals] = useState(false);
@@ -41,7 +40,7 @@ const Characters = ({ searchedWord }) => {
         setmaxPages(data.info.pages);
       }
     }
-  }, [currentPage, data]);
+  }, [data]);
 
   function ShowModal(personaje) {
     setPersonaje(personaje);
@@ -54,7 +53,6 @@ const Characters = ({ searchedWord }) => {
     const newApi = `https://rickandmortyapi.com/api/character?page=${numPag}`;
     setnumPag(numPag);
     setAPi(newApi);
-    setCurrentPage(newApi);
   }
 
   //guardar en local
@@ -80,7 +78,6 @@ const Characters = ({ searchedWord }) => {
   }
 
   if (error) {
-    console.log(error);
     const MySwal = withReactContent(Swal);
     MySwal.fire({
       title: "Error!",

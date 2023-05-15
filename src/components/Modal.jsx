@@ -6,7 +6,7 @@ export default function Modal({ open, personaje, onClose }) {
   if (!open) {
     return null;
   }
-
+  console.log(personaje);
   return (
     <>
       <div className={styles.container}>
@@ -59,6 +59,15 @@ export default function Modal({ open, personaje, onClose }) {
                   <h1>{personaje.status}</h1>
                 </div>
               )}
+            </div>
+
+            <div className={styles.row}>
+              <div className={styles.detalle}>
+                <h1>Last location:</h1>
+              </div>
+              <div className={styles.help}>
+                <h1>{personaje.location.name}</h1>
+              </div>
             </div>
           </center>
         </div>

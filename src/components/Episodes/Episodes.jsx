@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import useFetch from "../../services/useFetch";
 import EpesisodesList from "./EpisodesList";
+import Pagination from "../Pagination";
 
 function Episodes({ searchedWord }) {
   //paginacion
@@ -10,6 +11,14 @@ function Episodes({ searchedWord }) {
     `https://rickandmortyapi.com/api/episode?page=${numPage}`
   );
   const { data, loading, error } = useFetch(Api);
+
+  function change(numPag) {
+    console.log("page " + numPag);
+    const newApi = `https://rickandmortyapi.com/api/episode?page=${numPag}`;
+    setnumPag(numPag);
+    setAPi(newApi);
+  }
+
   if (loading || !data) {
     return (
       <>
@@ -18,9 +27,13 @@ function Episodes({ searchedWord }) {
     );
   }
   const { results: episodes } = data;
+
   return (
     <>
       <EpesisodesList episodes={episodes} />
+      {searchedWord === "" && (
+        <Pagination numPage={numPage} change={change} maxPages={maxPages} />
+      )}
     </>
   );
 }

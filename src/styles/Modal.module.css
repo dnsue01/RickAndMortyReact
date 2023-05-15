@@ -10,8 +10,8 @@
   text-align: center;
 }
 .modal {
-  width: 50vh;
-  height: 40vh;
+  width: 60vh;
+  height: 50vh;
   background-color: #12b0c9;
   position: fixed;
   top: 50%;
@@ -19,7 +19,7 @@
   transform: translate(-50%, -50%);
   border-radius: 5%;
   margin-top: -15vh;
-  margin-left: -25vh;
+  margin-left: -30vh;
   border: 5px rgb(0, 0, 0) solid;
   color: rgb(0, 0, 0);
 
@@ -149,7 +149,7 @@
 
 @media (max-width: 560px) {
   .modal {
-    width: 40vh;
+    width: 50vh;
     height: 35vh;
     margin-left: -21vh;
   }
