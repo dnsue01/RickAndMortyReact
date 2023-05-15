@@ -43,16 +43,19 @@
 }
 
 .rating_number {
-  color: red;
+  color: #6afb32;
+  font-weight: bold;
 }
 
 .rating {
   float: left;
   color: white;
   margin-left: 1%;
+  font-weight: bold;
 }
 .number {
   float: right;
   color: white;
   margin-right: 1%;
+  font-weight: bold;
 }

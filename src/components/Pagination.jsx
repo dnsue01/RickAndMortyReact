@@ -3,7 +3,6 @@ import styles from "../styles/Pagination.module.css";
 
 const Pagination = ({ numPage, maxPages, change }) => {
   let nextPage = numPage + 1 <= maxPages ? numPage + 1 : maxPages;
-  console.log(nextPage);
   let prevPage = numPage - 1 <= 1 ? 1 : numPage - 1;
 
   function changePrevious() {

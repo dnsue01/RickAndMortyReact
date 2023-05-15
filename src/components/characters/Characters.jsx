@@ -5,7 +5,7 @@ import Modal from "../Modal";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import useFetch from "../../services/useFetch";
-
+import { Skeleton } from "primereact/skeleton";
 const Characters = ({ searchedWord }) => {
   //paginacion
   const [numPage, setnumPag] = useState(1);

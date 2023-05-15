@@ -29,7 +29,8 @@ export default function Card({ episode }) {
       <h1 className={styles.titulo}>{episode.name}</h1>
       <h1 className={styles.overview}>{data.overview}</h1>
       <p className={styles.rating}>
-        Rating:<span className={styles.rating_number}>{data.vote_average}</span>
+        Rating:
+        <span className={styles.rating_number}> {data.vote_average}</span>
       </p>
       <p className={styles.number}>{episode.episode}</p>
     </div>
