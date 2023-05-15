@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import useFetch from "../../services/useFetch";
 import EpisodesList from "./EpisodesList";
 import Pagination from "../Pagination";
+import CardLoader from "./CardLoader";
 
 function Episodes({ searchedWord }) {
   //paginacion
@@ -18,23 +19,12 @@ function Episodes({ searchedWord }) {
     setnumPag(numPag);
     setAPi(newApi);
   }
-  /*
-  useEffect(() => {
-    if (data) {
-      if (data.error) {
-      } else {
-        const newApi = `https://rickandmortyapi.com/api/episode?page=${numPage}&&name=${searchedWord}`;
-        setAPi(newApi);
-        setmaxPages(data.info.pages);
-      }
-    }
-  }, [data, searchedWord]);
-*/
 
   useEffect(() => {
     const newApi = `https://rickandmortyapi.com/api/episode?page=${numPage}&&name=${searchedWord}`;
     setAPi(newApi);
   }, [searchedWord]);
+
   useEffect(() => {
     if (data) {
       if (!data.error) {
@@ -46,17 +36,19 @@ function Episodes({ searchedWord }) {
   if (loading || !data) {
     return (
       <>
-        <h1>LOADING...</h1>
+        <CardLoader />
+        <CardLoader />
+        <CardLoader />
+        <CardLoader />
+        <CardLoader />
+        <CardLoader />
+        <CardLoader />
       </>
     );
   }
 
   if (data.error) {
-    return (
-      <>
-        <h1>error...</h1>
-      </>
-    );
+    return <></>;
   } else {
     const { results: episodes } = data;
 
@@ -66,6 +58,7 @@ function Episodes({ searchedWord }) {
         {searchedWord === "" && (
           <Pagination numPage={numPage} change={change} maxPages={maxPages} />
         )}
+        n
       </>
     );
   }

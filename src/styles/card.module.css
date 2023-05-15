@@ -36,6 +36,11 @@
   margin-top: 3%;
 }
 
+.centro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .profile {
   height: 15vh;
   width: 15vh;

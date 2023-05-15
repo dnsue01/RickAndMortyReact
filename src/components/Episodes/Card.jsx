@@ -1,7 +1,7 @@
 import useFetch from "../../services/useFetch";
 import React, { useState } from "react";
 import styles from "../../styles/CardEpisode.module.css";
-
+import CardLoader from "./CardLoader";
 export default function Card({ episode }) {
   let season = episode.episode.slice(0, 3);
   season = season.slice(1);
@@ -16,7 +16,12 @@ export default function Card({ episode }) {
   const { data, loading, error } = useFetch(api);
 
   if (loading || !data) {
-    return <div>Loading...</div>;
+    return (
+      <>
+        {" "}
+        <CardLoader />
+      </>
+    );
   }
   const urlImg = "https://image.tmdb.org/t/p/original/";
 

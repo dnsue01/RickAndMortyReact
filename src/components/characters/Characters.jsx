@@ -5,7 +5,9 @@ import Modal from "../Modal";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import useFetch from "../../services/useFetch";
-import { Skeleton } from "primereact/skeleton";
+import CardLoader from "./CardLoader";
+import styles from "../../styles/CardGrid.module.css";
+import OptionFilter from "../OptionFilter";
 const Characters = ({ searchedWord }) => {
   //paginacion
   const [numPage, setnumPag] = useState(1);
@@ -72,7 +74,15 @@ const Characters = ({ searchedWord }) => {
   if (loading || !data) {
     return (
       <>
-        <h1>LOADING...</h1>
+        <h1 className={styles.characters}>All characters</h1>
+        <OptionFilter />
+        <div className={styles.cardGrid}>
+          <CardLoader />
+          <CardLoader />
+          <CardLoader />
+          <CardLoader />
+          <CardLoader />
+        </div>
       </>
     );
   }
