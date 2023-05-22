@@ -1,0 +1,15 @@
+img {
+  height: 7vh;
+  width: 7vh;
+}
+
+select {
+  font-size: 1.5rem;
+  border: rgb(203, 203, 203) 1px solid;
+  border: none;
+  border: solid 1px #000000;
+  border-radius: 10px;
+  border: none;
+  box-shadow: rgb(255, 255, 255) 0px 2px 5px -1px,
+    rgb(255, 255, 255) 0px 1px 3px -1px;
+}

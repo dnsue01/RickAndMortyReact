@@ -8,6 +8,7 @@ import "primereact/resources/themes/lara-light-indigo/theme.css";
 
 //core
 import "primereact/resources/primereact.min.css";
+
 export default function CardLoader() {
   return (
     <div className={styles.card}>

@@ -48,7 +48,9 @@
   -webkit-animation: fade-in 2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   animation: fade-in 2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
-
+.profile:hover {
+  cursor: pointer;
+}
 @-webkit-keyframes fade-in {
   0% {
     opacity: 0;
@@ -71,7 +73,9 @@
   align-items: center;
   justify-content: center;
 }
-
+.like:hover {
+  cursor: pointer;
+}
 @media (max-width: 560px) {
   .card h3 {
     height: 1vh;

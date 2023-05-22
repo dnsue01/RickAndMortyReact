@@ -6,7 +6,6 @@ export default function Modal({ open, personaje, onClose }) {
   if (!open) {
     return null;
   }
-  console.log(personaje);
   return (
     <>
       <div className={styles.container}>

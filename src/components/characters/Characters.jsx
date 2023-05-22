@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import CardList from "./CardList";
 import Pagination from "../Pagination";
-import Modal from "../Modal";
+import Modal from "../ModalCharacter";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import useFetch from "../../services/useFetch";

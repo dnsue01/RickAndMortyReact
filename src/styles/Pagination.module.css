@@ -14,8 +14,11 @@
   border-radius: 20%;
   height: 3vh;
   margin-inline: 2%;
+  margin-top: 2%;
 }
-
+h1 {
+  margin-bottom: 1%;
+}
 .oculto {
   visibility: hidden;
 }

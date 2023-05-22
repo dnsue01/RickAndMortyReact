@@ -1,5 +1,5 @@
 .card {
-  margin-top: 10%;
+  margin-top: 1%;
   height: 40vh;
   width: 40vh;
   background-color: rgb(0, 0, 0);
@@ -13,6 +13,9 @@
   width: 35vh;
   padding-bottom: 4%;
 }
+.card img:hover {
+  cursor: pointer;
+}
 
 .centro {
   display: flex;
@@ -22,24 +25,21 @@
 
 .titulo {
   color: #12b0c9;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-weight: bolder;
   white-space: nowrap;
   overflow-x: hidden;
   text-overflow: ellipsis;
   margin-left: 1%;
   margin-bottom: 2%;
+  text-align: center;
 }
 .overview {
   color: white;
-  font-size: small;
+  font-size: large;
   width: 38vh;
   height: 2vh;
-  overflow: hidden;
-  display: inline-block;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  margin-left: 1%;
+  text-align: center;
 }
 
 .rating_number {
@@ -58,4 +58,49 @@
   color: white;
   margin-right: 1%;
   font-weight: bold;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+}
+.top_right {
+  position: absolute;
+  top: -15px;
+  right: 5px;
+  font-size: 1.51rem;
+  -webkit-text-stroke: 1.5px #050505;
+}
+.topLeft {
+  height: 5vh;
+  width: 50%;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.topRight {
+  height: 5vh;
+  width: 50%;
+  float: right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.botLeft {
+  height: 5vh;
+  width: 50%;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.botRigth {
+  height: 5vh;
+  width: 50%;
+  float: right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

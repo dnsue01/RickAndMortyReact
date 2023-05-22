@@ -3,8 +3,8 @@ import logo from "../resources/Logo.png";
 import styles from "../styles/Navbar.module.css";
 import SearchBar from "./Searchbar";
 import Categories from "./Categories";
-
-export default function Nav({ search }) {
+import LanguageSelector from "./LanguageSelector";
+export default function Nav({ search, languaje }) {
   return (
     <header>
       <section className={styles.navbar}>
@@ -12,6 +12,7 @@ export default function Nav({ search }) {
           <img src={logo} alt="logo" />
         </figure>
       </section>
+      <LanguageSelector languaje={languaje} />
       <Categories />
       <section className={styles.search}>
         <SearchBar search={search} />

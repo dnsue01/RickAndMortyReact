@@ -3,8 +3,8 @@ import useFetch from "../../services/useFetch";
 import EpisodesList from "./EpisodesList";
 import Pagination from "../Pagination";
 import CardLoader from "./CardLoader";
-
-function Episodes({ searchedWord }) {
+import Modal from "../ModalEpisode";
+function Episodes({ searchedWord, languajeSelected }) {
   //paginacion
   const [numPage, setnumPag] = useState(1);
   const [maxPages, setmaxPages] = useState(0);
@@ -14,6 +14,10 @@ function Episodes({ searchedWord }) {
   const [filter, setFilter] = useState("");
   const { data, loading, error } = useFetch(Api);
   const [episodes, SetEpisodes] = useState([]);
+
+  //modal
+  const [openModal, setopenModals] = useState(false);
+  const [episode, SetEpisode] = useState();
 
   function change(numPag) {
     const newApi = `https://rickandmortyapi.com/api/episode?page=${numPag}&&name=${searchedWord}`;
@@ -29,6 +33,11 @@ function Episodes({ searchedWord }) {
     SetEpisodes([]);
     setAPi(api);
   };
+
+  function showModal(episode) {
+    SetEpisode(episode);
+    setopenModals(true);
+  }
   function selectFilter(filter) {
     const filterMap = {
       "": "",
@@ -80,9 +89,23 @@ function Episodes({ searchedWord }) {
   } else {
     return (
       <>
-        <EpisodesList episodes={episodes} onFilter={onFilter} filter={filter} />
+        <EpisodesList
+          episodes={episodes}
+          onFilter={onFilter}
+          filter={filter}
+          showModal={showModal}
+          languajeSelected={languajeSelected}
+        />
         {searchedWord === "" && filter === "" && (
           <Pagination numPage={numPage} change={change} maxPages={maxPages} />
+        )}
+
+        {episode && (
+          <Modal
+            open={openModal}
+            episode={episode}
+            onClose={() => setopenModals(false)}
+          />
         )}
       </>
     );

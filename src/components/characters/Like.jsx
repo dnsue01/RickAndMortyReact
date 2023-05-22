@@ -1,6 +1,6 @@
-import styles from "../styles/ButtonLike.module.css";
-import heartBold from "../resources/heartbold.png";
-import heart from "../resources/heart.png";
+import styles from "../../styles/ButtonLike.module.css";
+import heartBold from "../../resources/heartbold.png";
+import heart from "../../resources/heart.png";
 
 const Like = ({ like, likeCLick }) => {
   return (
