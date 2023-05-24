@@ -41,7 +41,7 @@ export default function OptionFilter({ onFilter, filter }) {
         <span className={styles.checkmark}></span>
       </label>
       <label htmlFor="unknown" className={styles.container}>
-        unknown
+        Unknown
         <input
           type="radio"
           name="filter"

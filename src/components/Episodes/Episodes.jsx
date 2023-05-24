@@ -85,7 +85,11 @@ function Episodes({ searchedWord }) {
   }
 
   if (data.error) {
-    return <></>;
+    return (
+      <>
+        <h1>There is nothing</h1>
+      </>
+    );
   } else {
     return (
       <>

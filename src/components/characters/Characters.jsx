@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import CardList from "./CardList";
 import Pagination from "../Pagination";
 import Modal from "../ModalCharacter";
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
 import useFetch from "../../services/useFetch";
 import CardLoader from "./CardLoader";
 import styles from "../../styles/CardGrid.module.css";
@@ -22,9 +20,8 @@ const Characters = ({ searchedWord }) => {
 
   // modal
   const [openModal, setOpenModal] = useState(false);
-  const [personaje, setPersonaje] = useState();
+  const [character, setPersonaje] = useState();
 
-  // guardar en local
   const [Apis, setApis] = useLocalStorage(
     "urls",
     localStorage.getItem("urls") ? JSON.parse(localStorage.getItem("urls")) : []
@@ -37,19 +34,18 @@ const Characters = ({ searchedWord }) => {
 
   const { data, loading, error } = useFetch(Api);
 
-  // cambia al cambiar la api
   useEffect(() => {
     if (data) {
       if (!Apis.includes(Api)) {
-        guardarLocalUrl(Api);
-        guardarLocalData(data);
+        saveLocalUrl(Api);
+        saveLocalData(data);
         setMaxPages(data.info.pages);
       }
     }
   }, [data]);
 
-  function showModal(personaje) {
-    setPersonaje(personaje);
+  function showModal(character) {
+    setPersonaje(character);
     setOpenModal(true);
   }
 
@@ -61,12 +57,12 @@ const Characters = ({ searchedWord }) => {
   }
 
   // guardar en local
-  function guardarLocalUrl(data) {
+  function saveLocalUrl(data) {
     const Api2 = [...Apis, data];
     setApis(Api2);
   }
 
-  function guardarLocalData(newData) {
+  function saveLocalData(newData) {
     const newDatas = [...dataLocal, newData];
     setData(newDatas);
   }
@@ -89,12 +85,7 @@ const Characters = ({ searchedWord }) => {
   }
 
   if (error) {
-    const MySwal = withReactContent(Swal);
-    MySwal.fire({
-      title: "Error!",
-      text: "No tienes internet o acceso a esta api.",
-      icon: "error",
-    });
+    console.error("error");
   }
 
   const { results: characters } = data;
@@ -107,10 +98,10 @@ const Characters = ({ searchedWord }) => {
         searchedWord={searchedWord}
       />
 
-      {personaje && (
+      {character && (
         <Modal
           open={openModal}
-          personaje={personaje}
+          character={character}
           onClose={() => setOpenModal(false)}
         />
       )}

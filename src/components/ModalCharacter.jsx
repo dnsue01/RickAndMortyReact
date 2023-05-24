@@ -2,7 +2,7 @@ import React from "react";
 
 import styles from "../styles/Modal.module.css";
 
-export default function Modal({ open, personaje, onClose }) {
+export default function Modal({ open, character, onClose }) {
   if (!open) {
     return null;
   }
@@ -16,8 +16,8 @@ export default function Modal({ open, personaje, onClose }) {
               x
             </h1>
             <div className={styles.imagen}>
-              <img src={personaje.image} alt={personaje.id} />
-              <h1>{personaje.name}</h1>
+              <img src={character.image} alt={character.id} />
+              <h1>{character.name}</h1>
             </div>
 
             <div className={styles.row}>
@@ -25,7 +25,7 @@ export default function Modal({ open, personaje, onClose }) {
                 <h1>Gender:</h1>
               </div>
               <div className={styles.help}>
-                <h1>{personaje.gender}</h1>
+                <h1>{character.gender}</h1>
               </div>
             </div>
 
@@ -34,7 +34,7 @@ export default function Modal({ open, personaje, onClose }) {
                 <h1>Species:</h1>
               </div>
               <div className={styles.help}>
-                <h1>{personaje.species}</h1>
+                <h1>{character.species}</h1>
               </div>
             </div>
 
@@ -42,20 +42,20 @@ export default function Modal({ open, personaje, onClose }) {
               <div className={styles.detalle}>
                 <h1>Status:</h1>
               </div>
-              {personaje.status === "Alive" && (
+              {character.status === "Alive" && (
                 <div className={styles.alive}>
-                  <h1>{personaje.status}</h1>
+                  <h1>{character.status}</h1>
                 </div>
               )}
 
-              {personaje.status === "Dead" && (
+              {character.status === "Dead" && (
                 <div className={styles.dead}>
-                  <h1>{personaje.status}</h1>
+                  <h1>{character.status}</h1>
                 </div>
               )}
-              {personaje.status === "unknown" && (
+              {character.status === "unknown" && (
                 <div className={styles.unknown}>
-                  <h1>{personaje.status}</h1>
+                  <h1>{character.status}</h1>
                 </div>
               )}
             </div>
@@ -65,7 +65,7 @@ export default function Modal({ open, personaje, onClose }) {
                 <h1>Last location:</h1>
               </div>
               <div className={styles.help}>
-                <h1>{personaje.location.name}</h1>
+                <h1>{character.location.name}</h1>
               </div>
             </div>
           </center>

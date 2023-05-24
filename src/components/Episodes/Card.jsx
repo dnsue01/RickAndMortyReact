@@ -14,8 +14,7 @@ export default function Card({ episode, showModal }) {
   let episodeN = episode.episode.slice(-2);
   episodeN = parseInt(episodeN);
 
-  const { language, changeLanguage } = useLanguage();
-  console.log(language);
+  const { language } = useLanguage();
 
   const [api, setApi] = useState(
     `https://api.themoviedb.org/3/tv/60625/season/${season}/episode/${episodeN}?api_key=a510cc1f2585d3b3b02b4a71f0ae8b72&language=${language}`
@@ -26,7 +25,7 @@ export default function Card({ episode, showModal }) {
     setApi(newApi);
   }, [language, season, episodeN]);
 
-  const { data, loading, error } = useFetch(api);
+  const { data, loading } = useFetch(api);
 
   if (loading || !data) {
     return (
@@ -36,7 +35,7 @@ export default function Card({ episode, showModal }) {
     );
   } else {
     complete = { episode, data };
-    rating = Math.round(data.vote_average);
+    rating = data.vote_average.toFixed(1);
   }
 
   const urlImg = "https://image.tmdb.org/t/p/original/";
@@ -58,7 +57,7 @@ export default function Card({ episode, showModal }) {
       <h1 className={styles.titulo}>{data.name}</h1>
       <div className={styles}>
         <div className={styles.topLeft}>
-          <p className={styles.rating}>Vote Count: {data.vote_count}</p>
+          <p className={styles.rating}>Votes: {data.vote_count}</p>
         </div>
         <div className={styles.topRight}>
           <p className={styles.number}>Season {season}</p>

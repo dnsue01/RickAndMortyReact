@@ -3,10 +3,10 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import styles from "../styles/CharacterCircles.module.css";
 
-export default function CharacterCircles({ characters }) {
+export default function CharacterCircles({ characters, CharacterClick }) {
   const slidesPerPage = 10;
   const totalSlides = characters.length;
-  const [autoplay, setAutoplay] = useState(true);
+  const [autoplay, setAutoplay] = useState(false);
   const carouselRef = useRef();
 
   const toggleAutoplay = () => {
@@ -30,7 +30,7 @@ export default function CharacterCircles({ characters }) {
         showThumbs={false}
         infiniteLoop={true}
         autoPlay={autoplay}
-        interval={2000}
+        interval={4000}
         swipeable={true}
         emulateTouch={true}
         className={styles.container}
@@ -38,7 +38,11 @@ export default function CharacterCircles({ characters }) {
         {characterGroups.map((characterGroup, index) => (
           <div key={index} className={styles.characterGroup}>
             {characterGroup.map((character) => (
-              <div key={character.id} className={styles.character}>
+              <div
+                key={character.id}
+                className={styles.character}
+                onClick={() => CharacterClick(character)}
+              >
                 <img
                   src={character.image}
                   alt={character.id}

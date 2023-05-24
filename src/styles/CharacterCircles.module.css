@@ -13,7 +13,7 @@
 }
 .character {
   display: inline-block;
-  margin-right: 0.1rem;
+  margin-right: 0.15rem;
 }
 
 .character img {
@@ -26,7 +26,9 @@
 
 /* width */
 ::-webkit-scrollbar {
-  height: 5px;
+  height: 2px;
+
+  width: 8px;
 }
 
 /* Track */
@@ -37,7 +39,7 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #6afb32;
+  background: #5edf2b;
   border: 1px solid black;
-  border-radius: 5px;
+  border-radius: 10px;
 }

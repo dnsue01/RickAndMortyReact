@@ -45,9 +45,10 @@
 .icon {
   border-radius: 2%;
   width: 80%;
-  height: 30vh;
+  height: 35vh;
   border: 5px solid black;
   margin-top: 5%;
+  width: 60vh;
 }
 .scontainerM {
   margin-inline: 2%;
@@ -98,6 +99,20 @@ button {
   box-shadow: rgb(0, 0, 0) 0px 2px 5px -1px, rgb(0, 0, 0) 0px 1px 3px -1px;
   cursor: pointer;
   margin-bottom: 3%;
+}
+
+.episodeAndImg {
+  position: relative;
+  text-align: center;
+}
+
+.top_right {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 1.51rem;
+  -webkit-text-stroke: 1.5px #050505;
+  color: white;
 }
 @-webkit-keyframes scale-in-ver-center {
   0% {

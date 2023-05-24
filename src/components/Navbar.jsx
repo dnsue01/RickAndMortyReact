@@ -5,7 +5,7 @@ import SearchBar from "./Searchbar";
 import Categories from "./Categories";
 import LanguageSelector from "./LanguageSelector";
 
-export default function Nav({ search, languaje }) {
+export default function Nav({ search }) {
   return (
     <header>
       <section className={styles.navbar}>
@@ -13,11 +13,12 @@ export default function Nav({ search, languaje }) {
           <img src={logo} alt="logo" />
         </figure>
       </section>
-      <LanguageSelector languaje={languaje} />
+      <div className={styles.language}>
+        <LanguageSelector />
+      </div>
       <Categories />
-      <section className={styles.search}>
-        <SearchBar search={search} />
-      </section>
+
+      <SearchBar search={search} />
     </header>
   );
 }

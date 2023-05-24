@@ -6,7 +6,11 @@
   margin-top: 1vh;
   z-index: 1;
 }
-
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .input_with_button input[type="text"] {
   width: 40%;
   font-size: 2rem;

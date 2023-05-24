@@ -36,7 +36,6 @@ const CardList = ({ characters, showModal, searchedWord }) => {
     }
   };
 
-  //si characters del localstorage
   let infoLocal =
     localCharacters !== undefined ? JSON.parse(localCharacters) : [];
 
@@ -60,9 +59,9 @@ const CardList = ({ characters, showModal, searchedWord }) => {
   };
 
   const onFilter = (e) => {
-    let filtro = e.target.value;
-    setFilter(filtro);
-    api = `https://rickandmortyapi.com/api/character/?name=${searchedWord}&&status=${filtro}&&page=${numPage}`;
+    let filter = e.target.value;
+    setFilter(filter);
+    api = `https://rickandmortyapi.com/api/character/?name=${searchedWord}&&status=${filter}&&page=${numPage}`;
   };
 
   function change(numPag) {
