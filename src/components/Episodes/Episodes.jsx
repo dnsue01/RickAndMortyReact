@@ -4,7 +4,7 @@ import EpisodesList from "./EpisodesList";
 import Pagination from "../Pagination";
 import CardLoader from "./CardLoader";
 import Modal from "../ModalEpisode";
-function Episodes({ searchedWord, languajeSelected }) {
+function Episodes({ searchedWord }) {
   //paginacion
   const [numPage, setnumPag] = useState(1);
   const [maxPages, setmaxPages] = useState(0);
@@ -94,7 +94,6 @@ function Episodes({ searchedWord, languajeSelected }) {
           onFilter={onFilter}
           filter={filter}
           showModal={showModal}
-          languajeSelected={languajeSelected}
         />
         {searchedWord === "" && filter === "" && (
           <Pagination numPage={numPage} change={change} maxPages={maxPages} />

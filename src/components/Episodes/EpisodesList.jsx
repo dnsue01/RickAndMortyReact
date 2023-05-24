@@ -6,7 +6,6 @@ export default function EpisodesList({
   onFilter,
   filter,
   showModal,
-  languajeSelected,
 }) {
   return (
     <div>
@@ -17,11 +16,7 @@ export default function EpisodesList({
         {episodes.map((episode) => {
           return (
             <div key={episode.id}>
-              <Card
-                episode={episode}
-                languajeSelected={languajeSelected}
-                showModal={showModal}
-              />
+              <Card episode={episode} showModal={showModal} />
             </div>
           );
         })}

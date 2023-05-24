@@ -8,9 +8,6 @@ const CardGrid = () => {
   function search(palabra) {
     SetSearchedWord(palabra);
   }
-  function languaje(languaje) {
-    SetLanguajeSelected(languaje);
-  }
 
   //buscador
   const [searchedWord, SetSearchedWord] = useState("");
@@ -19,7 +16,7 @@ const CardGrid = () => {
   return (
     <section>
       <BrowserRouter>
-        <Nav search={search} languaje={languaje} />
+        <Nav search={search} />
         <Routes>
           <Route
             path="/"
@@ -28,12 +25,7 @@ const CardGrid = () => {
 
           <Route
             path="/episodes"
-            element={
-              <Episodes
-                searchedWord={searchedWord}
-                languajeSelected={languajeSelected}
-              />
-            }
+            element={<Episodes searchedWord={searchedWord} />}
           />
         </Routes>
       </BrowserRouter>

@@ -1,16 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import france from "../resources/france.png";
 import uk from "../resources/united-kingdom.png";
 import spain from "../resources/spain.png";
-import styles from "../styles/LanguajeSelector.module.css";
-export default function LanguageSelector({ languaje }) {
-  const [selected, SetSelected] = useState("en");
-  const [flag, setFlag] = useState(uk);
-  const handleChange = (event) => {
-    languaje(event.target.value);
-    SetSelected(event.target.value);
+import styles from "../styles/LanguageSelector.module.css";
+import { useLanguage } from "../services/useLanguage";
 
-    switch (event.target.value) {
+export default function LanguageSelector() {
+  const { language, changeLanguage } = useLanguage();
+  const [flag, setFlag] = React.useState(uk);
+
+  const handleChange = (event) => {
+    const selectedLanguage = event.target.value;
+    changeLanguage(selectedLanguage);
+
+    switch (selectedLanguage) {
       case "Fr":
         setFlag(france);
         break;
@@ -20,16 +23,22 @@ export default function LanguageSelector({ languaje }) {
       case "Es":
         setFlag(spain);
         break;
+      default:
+        setFlag(uk);
+        break;
     }
   };
+
   return (
-    <div className={styles}>
-      <img src={flag} alt={"dislike"}></img>
-      <select onChange={handleChange}>
-        <option>En</option>
-        <option>Fr</option>
-        <option>Es</option>
-      </select>
+    <div className={styles.center}>
+      <div className={styles.languageSelector}>
+        <img src={flag} alt="language flag" className={styles.flag} />
+        <select value={language} onChange={handleChange}>
+          <option value="En">En</option>
+          <option value="Fr">Fr</option>
+          <option value="Es">Es</option>
+        </select>
+      </div>
     </div>
   );
 }

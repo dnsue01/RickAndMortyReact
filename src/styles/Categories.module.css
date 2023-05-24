@@ -5,7 +5,7 @@
 }
 
 .categoria {
-  height: 10vh;
+  height: fit-content;
   width: 4vw;
   color: #12b0c9;
   -webkit-text-stroke: 1px #c8dd5d;

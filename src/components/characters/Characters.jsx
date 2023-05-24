@@ -8,70 +8,70 @@ import useFetch from "../../services/useFetch";
 import CardLoader from "./CardLoader";
 import styles from "../../styles/CardGrid.module.css";
 import OptionFilter from "./OptionFilter";
+import useLocalStorage from "../../services/useLocalStorage";
 
 const Characters = ({ searchedWord }) => {
-  //paginacion
-  const [numPage, setnumPag] = useState(1);
-  const [maxPages, setmaxPages] = useState(42);
+  // paginacion
+  const [numPage, setNumPage] = useState(1);
+  const [maxPages, setMaxPages] = useState(42);
 
-  //api
-  const [Api, setAPi] = useState(
+  // api
+  const [Api, setApi] = useState(
     `https://rickandmortyapi.com/api/character?page=${numPage}`
   );
 
-  //modal
-  const [openModal, setopenModals] = useState(false);
+  // modal
+  const [openModal, setOpenModal] = useState(false);
   const [personaje, setPersonaje] = useState();
 
-  //guardar en local
-  const [Apis, setApis] = useState(
+  // guardar en local
+  const [Apis, setApis] = useLocalStorage(
+    "urls",
     localStorage.getItem("urls") ? JSON.parse(localStorage.getItem("urls")) : []
   );
 
-  const [dataLocal, setData] = useState(
+  const [dataLocal, setData] = useLocalStorage(
+    "data",
     localStorage.getItem("data") ? JSON.parse(localStorage.getItem("data")) : []
   );
 
   const { data, loading, error } = useFetch(Api);
 
-  //cambia al cambiar la api
+  // cambia al cambiar la api
   useEffect(() => {
     if (data) {
       if (!Apis.includes(Api)) {
-        guardarlocalUrl(Api);
-        guardarlocalData(data);
-        setmaxPages(data.info.pages);
+        guardarLocalUrl(Api);
+        guardarLocalData(data);
+        setMaxPages(data.info.pages);
       }
     }
   }, [data]);
 
-  function ShowModal(personaje) {
+  function showModal(personaje) {
     setPersonaje(personaje);
-    setopenModals(true);
+    setOpenModal(true);
   }
 
-  //paginacion
-
+  // paginacion
   function change(numPag) {
     const newApi = `https://rickandmortyapi.com/api/character?page=${numPag}`;
-    setnumPag(numPag);
-    setAPi(newApi);
+    setNumPage(numPag);
+    setApi(newApi);
   }
 
-  //guardar en local
-
-  function guardarlocalUrl(data) {
+  // guardar en local
+  function guardarLocalUrl(data) {
     const Api2 = [...Apis, data];
     setApis(Api2);
-    localStorage.setItem("urls", JSON.stringify(Api2));
-  }
-  function guardarlocalData(newData) {
-    const newDatas = [...dataLocal, newData];
-    setData(newDatas);
-    localStorage.setItem("data", JSON.stringify(newDatas));
   }
 
-  //no se renderiza hasta que haya characters
+  function guardarLocalData(newData) {
+    const newDatas = [...dataLocal, newData];
+    setData(newDatas);
+  }
+
+  // no se renderiza hasta que haya characters
   if (loading || !data) {
     return (
       <>
@@ -103,7 +103,7 @@ const Characters = ({ searchedWord }) => {
     <section>
       <CardList
         characters={characters}
-        showModal={ShowModal}
+        showModal={showModal}
         searchedWord={searchedWord}
       />
 
@@ -111,7 +111,7 @@ const Characters = ({ searchedWord }) => {
         <Modal
           open={openModal}
           personaje={personaje}
-          onClose={() => setopenModals(false)}
+          onClose={() => setOpenModal(false)}
         />
       )}
       {searchedWord === "" && (

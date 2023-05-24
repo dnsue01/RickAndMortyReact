@@ -1,9 +1,11 @@
-import useFetch from "../../services/useFetch";
 import React, { useState, useEffect } from "react";
 import styles from "../../styles/CardEpisode.module.css";
 import CardLoader from "./CardLoader";
-export default function Card({ episode, showModal, languajeSelected }) {
-  let completo;
+import { useLanguage } from "../../services/useLanguage";
+import useFetch from "../../services/useFetch";
+
+export default function Card({ episode, showModal }) {
+  let complete;
   let rating;
   let season = episode.episode.slice(0, 3);
   season = season.slice(1);
@@ -12,28 +14,31 @@ export default function Card({ episode, showModal, languajeSelected }) {
   let episodeN = episode.episode.slice(-2);
   episodeN = parseInt(episodeN);
 
+  const { language, changeLanguage } = useLanguage();
+  console.log(language);
+
   const [api, setApi] = useState(
-    `https://api.themoviedb.org/3/tv/60625/season/${season}/episode/${episodeN}?api_key=a510cc1f2585d3b3b02b4a71f0ae8b72&language=${languajeSelected}`
+    `https://api.themoviedb.org/3/tv/60625/season/${season}/episode/${episodeN}?api_key=a510cc1f2585d3b3b02b4a71f0ae8b72&language=${language}`
   );
 
   useEffect(() => {
-    const newApi = `https://api.themoviedb.org/3/tv/60625/season/${season}/episode/${episodeN}?api_key=a510cc1f2585d3b3b02b4a71f0ae8b72&language=${languajeSelected}`;
+    const newApi = `https://api.themoviedb.org/3/tv/60625/season/${season}/episode/${episodeN}?api_key=a510cc1f2585d3b3b02b4a71f0ae8b72&language=${language}`;
     setApi(newApi);
-  }, [languajeSelected]);
+  }, [language, season, episodeN]);
 
   const { data, loading, error } = useFetch(api);
 
   if (loading || !data) {
     return (
       <>
-        {" "}
         <CardLoader />
       </>
     );
   } else {
-    completo = { episode, data };
+    complete = { episode, data };
     rating = Math.round(data.vote_average);
   }
+
   const urlImg = "https://image.tmdb.org/t/p/original/";
 
   return (
@@ -43,7 +48,7 @@ export default function Card({ episode, showModal, languajeSelected }) {
           <img
             src={`${urlImg}${data.still_path}`}
             alt=""
-            onClick={() => showModal(completo)}
+            onClick={() => showModal(complete)}
           />
           <div className={styles.top_right}>
             <p className={styles.rating}>{episode.episode}</p>
@@ -70,9 +75,4 @@ export default function Card({ episode, showModal, languajeSelected }) {
       </div>
     </div>
   );
-  /*
-  
-
-      
-  */
 }

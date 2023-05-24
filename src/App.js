@@ -1,9 +1,14 @@
 import CardGrid from "./components/CardGrid";
 import React from 'react';
+import { LanguageProvider } from "./services/useLanguage";
 
 function App() {
   return (
-    <CardGrid />
+    <LanguageProvider initialLanguage="En">
+
+
+      <CardGrid />
+    </LanguageProvider>
   );
 }
 

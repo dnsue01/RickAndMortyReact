@@ -4,6 +4,7 @@ import styles from "../styles/Navbar.module.css";
 import SearchBar from "./Searchbar";
 import Categories from "./Categories";
 import LanguageSelector from "./LanguageSelector";
+
 export default function Nav({ search, languaje }) {
   return (
     <header>
