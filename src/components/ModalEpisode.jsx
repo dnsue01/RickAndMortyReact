@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "../styles/ModalEpisode.module.css";
 import CharacterCircles from "./CharacterCircles";
 import ModalCharacter from "./ModalCharacter";
+import { useTranslation } from "react-i18next";
 
 export default function Modal({ open, episode, onClose }) {
   const [characters, setCharacters] = useState([]);
@@ -9,6 +10,8 @@ export default function Modal({ open, episode, onClose }) {
   const [character, setCharacter] = useState(null);
   const [openCharacters, setOpencharacters] = useState(false);
   const [openModal, setOpenModal] = useState(false);
+
+  const [t, i18n] = useTranslation("global");
   if (!open) {
     return null;
   }
@@ -80,7 +83,9 @@ export default function Modal({ open, episode, onClose }) {
             <h1 className={styles.overview}>{episode.data.overview}</h1>
 
             {!openCharacters && (
-              <button onClick={showCharacters}>See characters</button>
+              <button onClick={showCharacters}>
+                {t("ModalEpisode.SeeCharacters")}
+              </button>
             )}
 
             <div className={styles.centro}>
@@ -88,13 +93,13 @@ export default function Modal({ open, episode, onClose }) {
                 <div className={styles.season}>
                   <h1 className={styles.title}>
                     {" "}
-                    Votes:{episode.data.vote_count}
+                    {t("ModalEpisode.Votes")}:{episode.data.vote_count}
                   </h1>
                 </div>
                 <div className={styles.rating}>
                   <h1 className={styles.title}>
                     {" "}
-                    Rating:
+                    {t("ModalEpisode.Rating")}:
                     <span className={styles.rating_number}>
                       {" "}
                       {episode.data.vote_average.toFixed(1)}

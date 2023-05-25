@@ -1,0 +1,29 @@
+{
+  "ModalCharacter": {
+    "Gender": "Gender",
+    "Species": "Species",
+    "Status": "Status",
+    "Lastlocation": "Last location"
+  },
+  "ModalEpisode": {
+    "SeeCharacters": "See Characters",
+    "Rating": "Rating",
+    "Votes": "Votes"
+  },
+  "Categories": {
+    "Characters": "Characters",
+    "Episodes": "Episodes"
+  },
+  "Filter": {
+    "All": "All",
+    "Alive": "Alive",
+    "Dead": "Dead",
+    "Unknown": "Unknown"
+  },
+  "EpisodeCard": {
+    "Votes": "Votes",
+    "Rating": "Rating",
+    "Season": "Season",
+    "Episode": "Episode"
+  }
+}

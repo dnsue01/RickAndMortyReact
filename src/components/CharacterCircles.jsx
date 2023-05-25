@@ -6,12 +6,8 @@ import styles from "../styles/CharacterCircles.module.css";
 export default function CharacterCircles({ characters, CharacterClick }) {
   const slidesPerPage = 10;
   const totalSlides = characters.length;
-  const [autoplay, setAutoplay] = useState(false);
-  const carouselRef = useRef();
 
-  const toggleAutoplay = () => {
-    setAutoplay(!autoplay);
-  };
+  const carouselRef = useRef();
 
   // Divide characters into multiple arrays, each containing 5 characters
   const characterGroups = [];
@@ -29,8 +25,8 @@ export default function CharacterCircles({ characters, CharacterClick }) {
         showIndicators={false}
         showThumbs={false}
         infiniteLoop={true}
-        autoPlay={autoplay}
-        interval={4000}
+        autoPlay={true}
+        interval={8000}
         swipeable={true}
         emulateTouch={true}
         className={styles.container}
@@ -54,11 +50,6 @@ export default function CharacterCircles({ characters, CharacterClick }) {
           </div>
         ))}
       </Carousel>
-      <div
-        className={styles.carouselOverlay}
-        onMouseEnter={toggleAutoplay}
-        onMouseLeave={toggleAutoplay}
-      ></div>
     </div>
   );
 }

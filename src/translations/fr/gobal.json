@@ -1,0 +1,29 @@
+{
+  "ModalCharacter": {
+    "Gender": "Genre",
+    "Species": "Espèces",
+    "Status": "Statut",
+    "Lastlocation": "Dernier lieu"
+  },
+  "ModalEpisode": {
+    "SeeCharacters": "Voir les personnagess",
+    "Rating": "Notation",
+    "Votes": "Voix"
+  },
+  "Categories": {
+    "Characters": "Personnagess",
+    "Episodes": "Épisodes"
+  },
+  "Filter": {
+    "All": "Tout",
+    "Alive": "Vivant",
+    "Dead": "Mort",
+    "Unknown": "Inconnu"
+  },
+  "EpisodeCard": {
+    "Votes": "Voix",
+    "Rating": "Notation",
+    "Season": "Saison",
+    "Episode": "Épisode"
+  }
+}

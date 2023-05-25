@@ -1,11 +1,14 @@
 import React from "react";
 import styles from "../../styles/Option.module.css";
+import { useTranslation } from "react-i18next";
 
 export default function OptionFilter({ onFilter, filter }) {
+  const [t, i18n] = useTranslation("global");
+
   return (
     <div className={styles.centro}>
       <label htmlFor="All" className={styles.container}>
-        All
+        {t("Filter.All")}
         <input
           type="radio"
           name="filter"
@@ -17,7 +20,7 @@ export default function OptionFilter({ onFilter, filter }) {
         <span className={styles.checkmark}></span>
       </label>
       <label htmlFor="Alive" className={styles.container}>
-        Alive
+        {t("Filter.Alive")}
         <input
           type="radio"
           name="filter"
@@ -29,7 +32,7 @@ export default function OptionFilter({ onFilter, filter }) {
         <span className={styles.checkmark}></span>
       </label>
       <label htmlFor="Dead" className={styles.container}>
-        Dead
+        {t("Filter.Dead")}
         <input
           type="radio"
           name="filter"
@@ -41,7 +44,7 @@ export default function OptionFilter({ onFilter, filter }) {
         <span className={styles.checkmark}></span>
       </label>
       <label htmlFor="unknown" className={styles.container}>
-        Unknown
+        {t("Filter.Unknown")}
         <input
           type="radio"
           name="filter"

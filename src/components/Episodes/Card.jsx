@@ -3,8 +3,11 @@ import styles from "../../styles/CardEpisode.module.css";
 import CardLoader from "./CardLoader";
 import { useLanguage } from "../../services/useLanguage";
 import useFetch from "../../services/useFetch";
+import { useTranslation } from "react-i18next";
 
 export default function Card({ episode, showModal }) {
+  const [t, i18n] = useTranslation("global");
+
   let complete;
   let rating;
   let season = episode.episode.slice(0, 3);
@@ -39,7 +42,6 @@ export default function Card({ episode, showModal }) {
   }
 
   const urlImg = "https://image.tmdb.org/t/p/original/";
-
   return (
     <div className={styles.card}>
       <div className={styles.centro}>
@@ -54,22 +56,31 @@ export default function Card({ episode, showModal }) {
           </div>
         </div>
       </div>
-      <h1 className={styles.titulo}>{data.name}</h1>
+      <div className={styles.titleDiv}>
+        <h1 className={styles.titulo}>{data.name}</h1>
+      </div>
       <div className={styles}>
         <div className={styles.topLeft}>
-          <p className={styles.rating}>Votes: {data.vote_count}</p>
+          <p className={styles.rating}>
+            {t("EpisodeCard.Votes")}: {data.vote_count}
+          </p>
         </div>
         <div className={styles.topRight}>
-          <p className={styles.number}>Season {season}</p>
+          <p className={styles.number}>
+            {t("EpisodeCard.Season")} {season}
+          </p>
         </div>
         <div className={styles.botLeft}>
           <p className={styles.rating}>
-            Rating:
+            {t("EpisodeCard.Rating")}:
             <span className={styles.rating_number}> {rating}</span>
           </p>
         </div>
         <div className={styles.botRigth}>
-          <p className={styles.number}>Episode {episodeN}</p>
+          <p className={styles.number}>
+            {" "}
+            {t("EpisodeCard.Episode")} {episodeN}
+          </p>
         </div>
       </div>
     </div>

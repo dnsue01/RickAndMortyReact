@@ -16,7 +16,9 @@
 .card img:hover {
   cursor: pointer;
 }
-
+.titleDiv {
+  margin-inline: 3%;
+}
 .centro {
   display: flex;
   align-items: center;
