@@ -29,7 +29,7 @@
 
 @media (max-width: 560px) {
   .input_with_button input[type="text"] {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     width: 75%;
   }
 }

@@ -25,5 +25,11 @@
     "Rating": "Rating",
     "Season": "Season",
     "Episode": "Episode"
+  },
+  "Characters": {
+    "AllCharacters": "All Characters"
+  },
+  "Searchbar": {
+    "Searcher": " Mr meeseeks searcher..."
   }
 }

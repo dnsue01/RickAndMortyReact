@@ -14,18 +14,35 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: solid 1px #c8dd5d;
+  border: solid 1px #6afb32;
   border-radius: 10px;
-  box-shadow: 0px 2px 5px -1px rgb(255, 255, 255),
-    0px 1px 3px -1px rgb(255, 255, 255);
+  box-shadow: 0px 2px 5px -1px #6afb32, 0px 1px 3px -1px #6afb32;
   padding: 0.5rem;
-  background-color: #12b0c9;
+  background-color: #000000;
   width: fit-content;
 }
 
 select {
   font-size: 1rem;
   border: none;
-  background-color: #12b0c9;
-  color: rgb(255, 255, 255);
+  background-color: #000000;
+  color: #6afb32;
+}
+
+@media only screen and (max-width: 768px) {
+  .flag {
+    height: 1rem;
+    width: 1rem;
+    margin-right: 0.5rem;
+  }
+  select {
+    font-size: 0.7rem;
+  }
+  .languageSelector {
+    border: solid 1px #c8dd5d;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px -1px rgb(255, 255, 255),
+      0px 1px 3px -1px rgb(255, 255, 255);
+    padding: 0.5rem;
+  }
 }

@@ -7,18 +7,18 @@ import CardLoader from "./CardLoader";
 import styles from "../../styles/CardGrid.module.css";
 import OptionFilter from "./OptionFilter";
 import useLocalStorage from "../../services/useLocalStorage";
+import { useTranslation } from "react-i18next";
 
 const Characters = ({ searchedWord }) => {
-  // paginacion
   const [numPage, setNumPage] = useState(1);
   const [maxPages, setMaxPages] = useState(42);
 
-  // api
+  const [t, i18n] = useTranslation("global");
+
   const [Api, setApi] = useState(
     `https://rickandmortyapi.com/api/character?page=${numPage}`
   );
 
-  // modal
   const [openModal, setOpenModal] = useState(false);
   const [character, setPersonaje] = useState();
 
@@ -71,7 +71,7 @@ const Characters = ({ searchedWord }) => {
   if (loading || !data) {
     return (
       <>
-        <h1 className={styles.characters}>All characters</h1>
+        <h1 className={styles.characters}>{t("Characters.AllCharacters")}</h1>
         <OptionFilter />
         <div className={styles.cardGrid}>
           <CardLoader />

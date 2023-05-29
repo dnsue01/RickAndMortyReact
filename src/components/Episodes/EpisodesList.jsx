@@ -15,9 +15,7 @@ export default function EpisodesList({
       <div className={styles.cards}>
         {episodes.map((episode) => {
           return (
-            <div key={episode.id}>
-              <Card episode={episode} showModal={showModal} />
-            </div>
+            <Card key={episode.id} episode={episode} showModal={showModal} />
           );
         })}
       </div>

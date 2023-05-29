@@ -75,8 +75,14 @@ export default function Modal({ open, character, onClose }) {
               <div className={styles.detalle}>
                 <h1>{t("ModalCharacter.Lastlocation")}:</h1>
               </div>
-              <div className={styles.help}>
-                <h1>{locationName}</h1>
+              <div className={`${styles.help} ${styles.location}`}>
+                <h1
+                  className={`${
+                    locationName.length > 20 ? styles.locationText : ""
+                  }`}
+                >
+                  {locationName}
+                </h1>
               </div>
             </div>
           </center>

@@ -2,7 +2,7 @@
   margin-top: 1%;
   overflow-x: scroll;
   overflow-y: hidden;
-  height: 5.4vh;
+  height: 5.5vh;
   width: 70%;
   white-space: nowrap;
 }
@@ -13,7 +13,8 @@
 }
 .character {
   display: inline-block;
-  margin-right: 0.15rem;
+  margin-right: 0.3rem;
+  cursor: pointer;
 }
 
 .character img {
@@ -42,4 +43,18 @@
   background: #5edf2b;
   border: 1px solid black;
   border-radius: 10px;
+}
+
+@media (max-width: 560px) {
+  .container {
+    height: 5.5vh;
+    width: 70%;
+  }
+  .character img {
+    width: 5vh;
+    height: 5vh;
+  }
+  .character {
+    margin-right: 0.21rem;
+  }
 }

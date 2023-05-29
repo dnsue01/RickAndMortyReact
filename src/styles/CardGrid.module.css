@@ -23,9 +23,6 @@ h1 {
 }
 
 @media (max-width: 560px) {
-  .moviesGrid {
-    grid-template-columns: 100%;
-  }
   .MainCharaters {
     grid-template-columns: 50%;
   }

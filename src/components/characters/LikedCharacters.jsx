@@ -15,11 +15,11 @@ export default function LikedCharacters({
     <>
       <h1 className={styles.characters}>Liked characters</h1>
       <article className={styles.cardGrid}>
-        {characters.slice(0, 5).map((personaje) => {
+        {characters.slice(0, 5).map((character) => {
           return (
-            <div key={personaje.id}>
+            <div key={character.id}>
               <Card
-                personaje={personaje}
+                character={character}
                 addToLikedCards={addToLikedCards}
                 setLikedCards={setLikedCards}
                 removeFromLikedCards={removeFromLikedCards}

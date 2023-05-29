@@ -39,7 +39,6 @@ export default function Modal({ open, episode, onClose }) {
   }
   const CharacterClick = (character) => {
     setCharacter(character);
-    console.log(character);
     setOpenModal(true);
   };
 
@@ -80,7 +79,7 @@ export default function Modal({ open, episode, onClose }) {
             )}
 
             <h1 className={styles.title}>{episode.data.name}</h1>
-            <h1 className={styles.overview}>{episode.data.overview}</h1>
+            <p className={styles.overview}>{episode.data.overview}</p>
 
             {!openCharacters && (
               <button onClick={showCharacters}>

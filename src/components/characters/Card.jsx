@@ -1,9 +1,9 @@
 import styles from "../../styles/card.module.css";
 import Like from "./Like";
 import { useState } from "react";
-import axios from "axios";
+
 function Card({
-  personaje,
+  character,
   addToLikedCards,
   removeFromLikedCards,
   showModal,
@@ -15,9 +15,9 @@ function Card({
     setOnlike(!onLike);
 
     if (!onLike) {
-      addToLikedCards(personaje);
+      addToLikedCards(character);
     } else {
-      removeFromLikedCards(personaje);
+      removeFromLikedCards(character);
     }
   };
 
@@ -26,13 +26,13 @@ function Card({
       <figure className={styles.portal}>
         <img
           className={styles.profile}
-          src={personaje.image}
-          alt={personaje.id}
-          onClick={() => showModal(personaje)}
+          src={character.image}
+          alt={character.id}
+          onClick={() => showModal(character)}
         />
       </figure>
       <div className={styles.titleDiv}>
-        <h3>{personaje.name}</h3>
+        <h3>{character.name}</h3>
       </div>
 
       <section className={styles.like}>

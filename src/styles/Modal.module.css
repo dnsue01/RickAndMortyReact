@@ -11,7 +11,7 @@
 }
 .modal {
   width: 60vh;
-  height: 55vh;
+  height: 50vh;
   background-color: #12b0c9;
   position: fixed;
   top: 50%;
@@ -27,6 +27,7 @@
   -webkit-animation: scale-in-ver-center 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)
     both;
   animation: scale-in-ver-center 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  font-size: 0.7rem;
 }
 
 .close {
@@ -62,51 +63,52 @@
 .help {
   margin-top: 2%;
   background-color: rgb(255, 255, 255);
-  width: 40%;
+  width: 45%;
   border: none;
   color: black;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  cursor: pointer;
   border-radius: 16px;
   border: 2px solid black;
+  overflow-x: scroll;
+  white-space: nowrap;
 }
 .alive {
   margin-top: 2%;
-  width: 40%;
+  width: 45%;
   border: none;
   color: black;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  cursor: pointer;
+
   border-radius: 16px;
   border: 2px solid black;
   background-color: #6afb32;
 }
 .dead {
   margin-top: 2%;
-  width: 40%;
+  width: 45%;
   border: none;
   color: black;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  cursor: pointer;
+
   border-radius: 16px;
   border: 2px solid black;
   background-color: #f85252;
 }
 .unknown {
   margin-top: 2%;
-  width: 40%;
+  width: 45%;
   border: none;
   color: black;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  cursor: pointer;
+
   border-radius: 16px;
   border: 2px solid black;
   background-color: #b1aeae;
@@ -116,6 +118,22 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+}
+.location {
+  overflow-x: hidden;
+}
+
+.locationText {
+  animation: rightToLeft 6.5s linear infinite;
+}
+
+@keyframes rightToLeft {
+  0% {
+    transform: translateX(300px);
+  }
+  100% {
+    transform: translateX(-300px);
+  }
 }
 @-webkit-keyframes scale-in-ver-center {
   0% {
@@ -151,7 +169,17 @@
 @media (max-width: 560px) {
   .modal {
     width: 50vh;
-    height: 35vh;
-    margin-left: -21vh;
+    height: 40vh;
+    margin-left: -25vh;
+    font-size: 0.5rem;
+  }
+
+  .imagen img {
+    margin-top: 5%;
+    margin-left: 10%;
+    border-radius: 50%;
+    height: 10vh;
+    width: 10vh;
+    border: 2px solid black;
   }
 }

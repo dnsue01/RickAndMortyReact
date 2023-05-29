@@ -4,12 +4,12 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import styles from "../styles/CharacterCircles.module.css";
 
 export default function CharacterCircles({ characters, CharacterClick }) {
-  const slidesPerPage = 10;
+  const slidesPerPage = 8;
   const totalSlides = characters.length;
 
   const carouselRef = useRef();
 
-  // Divide characters into multiple arrays, each containing 5 characters
+  // Divide characters into multiple arrays, each containing 10 characters
   const characterGroups = [];
   for (let i = 0; i < totalSlides; i += slidesPerPage) {
     const characterGroup = characters.slice(i, i + slidesPerPage);

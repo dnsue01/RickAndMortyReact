@@ -25,5 +25,11 @@
     "Rating": "Nota",
     "Season": "Temporada",
     "Episode": "Episodio"
+  },
+  "Characters": {
+    "AllCharacters": "Todos los personajes"
+  },
+  "Searchbar": {
+    "Searcher": " Buscador meeseeks ..."
   }
 }

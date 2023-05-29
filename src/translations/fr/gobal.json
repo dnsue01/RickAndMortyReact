@@ -25,5 +25,12 @@
     "Rating": "Notation",
     "Season": "Saison",
     "Episode": "Épisode"
+  },
+
+  "Characters": {
+    "AllCharacters": "Tous les personnages"
+  },
+  "Searchbar": {
+    "Searcher": " M. meeseeks chercheur..."
   }
 }

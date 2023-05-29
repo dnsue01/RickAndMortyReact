@@ -2,9 +2,8 @@
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  gap: 1rem;
-}
-
-.cards {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, 42vh);
+  gap: 2vh;
+  padding: 2vh;
+  justify-content: center;
 }
