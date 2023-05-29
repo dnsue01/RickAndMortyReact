@@ -1,7 +1,8 @@
 import React from "react";
 import styles from "../../styles/Option.module.css";
-
+import { useTranslation } from "react-i18next";
 export default function OptionFilter({ onFilter, filter }) {
+  const [t, i18n] = useTranslation("global");
   return (
     <div className={styles.centro}>
       <label htmlFor="All" className={styles.container}>
