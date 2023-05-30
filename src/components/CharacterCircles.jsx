@@ -9,7 +9,6 @@ export default function CharacterCircles({ characters, CharacterClick }) {
 
   const carouselRef = useRef();
 
-  // Divide characters into multiple arrays, each containing 10 characters
   const characterGroups = [];
   for (let i = 0; i < totalSlides; i += slidesPerPage) {
     const characterGroup = characters.slice(i, i + slidesPerPage);

@@ -4,14 +4,11 @@ import { useState } from "react";
 import Nav from "./Navbar";
 import Episodes from "./Episodes/Episodes";
 const CardGrid = () => {
-  //buscador
-  function search(palabra) {
-    SetSearchedWord(palabra);
+  function search(word) {
+    SetSearchedWord(word);
   }
 
-  //buscador
   const [searchedWord, SetSearchedWord] = useState("");
-  const [languajeSelected, SetLanguajeSelected] = useState("");
 
   return (
     <section>

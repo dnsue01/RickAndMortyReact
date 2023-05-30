@@ -16,9 +16,9 @@ h1 {
 }
 .cardGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 30vh);
+  grid-template-columns: repeat(auto-fill, 42vh);
   gap: 2vh;
-  padding: 1vh;
+  padding-inline: 1vh;
   justify-content: center;
 }
 
@@ -26,4 +26,13 @@ h1 {
   .MainCharaters {
     grid-template-columns: 50%;
   }
+}
+.cardGrid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 20vh);
+  gap: 10vh;
+  padding: 5vh;
+  justify-content: center;
 }

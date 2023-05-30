@@ -1,7 +1,7 @@
 .card {
   margin-top: 1%;
-  height: 43vh;
-  width: 40vh;
+  min-height: 45vh;
+  min-width: 40vh;
   background-color: rgb(0, 0, 0);
   border: 0.3vh solid #6afb32;
   border-radius: 2%;
@@ -33,7 +33,7 @@
   overflow-x: hidden;
   text-overflow: ellipsis;
   margin-left: 1%;
-  margin-bottom: 2%;
+  margin-bottom: 1%;
   text-align: center;
 }
 
@@ -109,9 +109,6 @@
     border: 0.3vh solid #6afb32;
     border-radius: 2%;
   }
-}
-
-@media (min-width: 100px) {
 }
 
 @media screen and (min-width: 1400px) {

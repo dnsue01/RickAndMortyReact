@@ -12,7 +12,7 @@
   background-color: #6afb32;
   border: none;
   border-radius: 20%;
-  height: 3vh;
+  height: 5svh;
   margin-inline: 2%;
   margin-top: 2%;
 }
@@ -24,6 +24,6 @@ h1 {
 }
 @media only screen and (max-width: 768px) {
   .paginacion button {
-    height: 4vh;
+    height: 6vh;
   }
 }

@@ -3,7 +3,7 @@
     "Gender": "Genero",
     "Species": "Especie",
     "Status": "Estado",
-    "Lastlocation": "Última ubicación"
+    "Lastlocation": "Última Ubicación"
   },
   "ModalEpisode": {
     "SeeCharacters": "Ver Personajes",
@@ -27,7 +27,8 @@
     "Episode": "Episodio"
   },
   "Characters": {
-    "AllCharacters": "Todos los personajes"
+    "AllCharacters": "Todos Los Personajes",
+    "LikedCharacters": "Personajes Favoritos"
   },
   "Searchbar": {
     "Searcher": " Buscador meeseeks ..."

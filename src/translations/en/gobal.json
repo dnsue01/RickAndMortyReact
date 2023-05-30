@@ -27,7 +27,8 @@
     "Episode": "Episode"
   },
   "Characters": {
-    "AllCharacters": "All Characters"
+    "AllCharacters": "All Characters",
+    "LikedCharacters": "Liked Characters"
   },
   "Searchbar": {
     "Searcher": " Mr meeseeks searcher..."

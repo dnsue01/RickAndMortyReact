@@ -11,11 +11,11 @@ import "primereact/resources/primereact.min.css";
 export default function CardLoader() {
   return (
     <article className={styles.card}>
-      <figure className={styles.centro}>
+      <figure className={styles.center}>
         <Skeleton shape="circle" size="17vh"></Skeleton>
       </figure>
 
-      <h3 className={styles.centro}>
+      <h3 className={styles.center}>
         <Skeleton height="1rem" width="50%" className="mb-2"></Skeleton>
       </h3>
 

@@ -3,10 +3,10 @@
     "Gender": "Genre",
     "Species": "Espèces",
     "Status": "Statut",
-    "Lastlocation": "Dernier lieu"
+    "Lastlocation": "Dernier Lieu"
   },
   "ModalEpisode": {
-    "SeeCharacters": "Voir les personnagess",
+    "SeeCharacters": "Voir Les personnagess",
     "Rating": "Notation",
     "Votes": "Voix"
   },
@@ -28,7 +28,8 @@
   },
 
   "Characters": {
-    "AllCharacters": "Tous les personnages"
+    "AllCharacters": "Tous Les Personnages",
+    "LikedCharacters": "Personnages Préférés"
   },
   "Searchbar": {
     "Searcher": " M. meeseeks chercheur..."
