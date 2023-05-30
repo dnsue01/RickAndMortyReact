@@ -3,7 +3,8 @@ import useFetch from "../../services/useFetch";
 import EpisodesList from "./EpisodesList";
 import Pagination from "../Pagination";
 import CardLoader from "./CardLoader";
-import Modal from "../ModalEpisode";
+import Modal from "../modals/ModalEpisode";
+import NoResults from "./NoResults";
 function Episodes({ searchedWord }) {
   //paginacion
   const [numPage, setnumPag] = useState(1);
@@ -85,11 +86,7 @@ function Episodes({ searchedWord }) {
   }
 
   if (data.error) {
-    return (
-      <>
-        <h1>There is nothing</h1>
-      </>
-    );
+    return <NoResults />;
   } else {
     return (
       <>

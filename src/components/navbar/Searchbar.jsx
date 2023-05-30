@@ -1,4 +1,4 @@
-import styles from "../styles/SearchBar.module.css";
+import styles from "../../styles/SearchBar.module.css";
 import React from "react";
 import { useTranslation } from "react-i18next";
 

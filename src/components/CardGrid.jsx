@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Characters from "./characters/Characters";
 import { useState } from "react";
-import Nav from "./Navbar";
+import Nav from "./navbar/Navbar";
 import Episodes from "./Episodes/Episodes";
 const CardGrid = () => {
   function search(word) {

@@ -1,4 +1,4 @@
-import styles from "../styles/Categories.module.css";
+import styles from "../../styles/Categories.module.css";
 import LinkStyle from "./LinkStyle";
 import { useTranslation } from "react-i18next";
 const Categories = () => {

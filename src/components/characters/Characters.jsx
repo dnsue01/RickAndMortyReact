@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import CardList from "./CardList";
 import Pagination from "../Pagination";
-import Modal from "../ModalCharacter";
+import Modal from "../modals/ModalCharacter";
 import useFetch from "../../services/useFetch";
 import CardLoader from "./CardLoader";
 import styles from "../../styles/CardGrid.module.css";

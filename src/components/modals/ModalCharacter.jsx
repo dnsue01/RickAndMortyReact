@@ -1,8 +1,8 @@
 import React from "react";
-import styles from "../styles/Modal.module.css";
+import styles from "../../styles/Modal.module.css";
 import { useTranslation } from "react-i18next";
-import { useLanguage } from "../services/useLanguage";
-import useTraduction from "../services/useTraduction";
+import { useLanguage } from "../../services/useLanguage";
+import useTraduction from "../../services/useTraduction";
 
 export default function Modal({ open, character, onClose }) {
   const [t, i18n] = useTranslation("global");

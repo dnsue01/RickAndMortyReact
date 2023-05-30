@@ -1,9 +1,9 @@
 import React from "react";
-import france from "../resources/france.png";
-import uk from "../resources/united-kingdom.png";
-import spain from "../resources/spain.png";
-import styles from "../styles/LanguageSelector.module.css";
-import { useLanguage } from "../services/useLanguage";
+import france from "../../resources/france.png";
+import uk from "../../resources/united-kingdom.png";
+import spain from "../../resources/spain.png";
+import styles from "../../styles/LanguageSelector.module.css";
+import { useLanguage } from "../../services/useLanguage";
 import { useTranslation } from "react-i18next";
 
 export default function LanguageSelector() {
