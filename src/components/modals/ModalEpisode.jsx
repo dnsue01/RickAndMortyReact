@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "../../styles/ModalEpisode.module.css";
-import CharacterCircles from "../Episodes/CharacterCircles";
+import CharacterCircles from "../episodes/CharacterCircles";
 import ModalCharacter from "./ModalCharacter";
 import { useTranslation } from "react-i18next";
 

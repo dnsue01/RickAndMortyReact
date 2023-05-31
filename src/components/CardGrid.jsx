@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Characters from "./characters/Characters";
 import { useState } from "react";
 import Nav from "./navbar/Navbar";
-import Episodes from "./Episodes/Episodes";
+import Episodes from "./episodes/Episodes";
 const CardGrid = () => {
   function search(word) {
     SetSearchedWord(word);

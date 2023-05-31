@@ -31,11 +31,7 @@ export default function Card({ episode, showModal }) {
   const { data, loading } = useFetch(api);
 
   if (loading || !data) {
-    return (
-      <>
-        <CardLoader />
-      </>
-    );
+    return <CardLoader />;
   } else {
     complete = { episode, data };
     rating = data.vote_average.toFixed(1);
