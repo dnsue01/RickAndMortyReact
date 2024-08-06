@@ -35,10 +35,10 @@ Welcome to the Rick and Morty React App! This project showcases characters from 
 Clone the repository:
    
  ```bash
- git clone https://github.com/dnsue01/RickAndMortyReact.git
-  - cd RickAndMortyReact
+   -git clone https://github.com/dnsue01/RickAndMortyReact.git
+   -cd RickAndMortyReact
   - npm install
-   
+  ``` 
 ## 🚀 Usage
 
 Open your browser and go to http://localhost:3000 to view the app.
