@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/RickAndMortyReact/static/css/main.f3007cd1.css",
+    "main.js": "/RickAndMortyReact/static/js/main.e876caff.js",
+    "static/js/496.a239dbb1.chunk.js": "/RickAndMortyReact/static/js/496.a239dbb1.chunk.js",
+    "static/media/stars.jpg": "/RickAndMortyReact/static/media/stars.e7e0b9fb16edfa247ba7.jpg",
+    "static/media/portal.png": "/RickAndMortyReact/static/media/portal.5fd1cf435ae63f5547c2.png",
+    "static/media/heartbold.png": "/RickAndMortyReact/static/media/heartbold.2fcd6fde4104b783f6e8.png",
+    "static/media/Logo.png": "/RickAndMortyReact/static/media/Logo.dfb2acf8e7fefb148719.png",
+    "static/media/heart.png": "/RickAndMortyReact/static/media/heart.c412cbaead4744166c20.png",
+    "static/media/color.png": "/RickAndMortyReact/static/media/color.6441e63a57ccc5105bad.png",
+    "index.html": "/RickAndMortyReact/index.html",
+    "main.f3007cd1.css.map": "/RickAndMortyReact/static/css/main.f3007cd1.css.map",
+    "main.e876caff.js.map": "/RickAndMortyReact/static/js/main.e876caff.js.map",
+    "496.a239dbb1.chunk.js.map": "/RickAndMortyReact/static/js/496.a239dbb1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f3007cd1.css",
+    "static/js/main.e876caff.js"
+  ]
+}
