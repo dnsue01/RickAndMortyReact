@@ -2,6 +2,10 @@
 
 Welcome to the Rick and Morty React App! This project showcases characters from the Rick and Morty universe using the Rick and Morty API. The application utilizes various modern React features and libraries to enhance the user experience.
 
+## 👀 Check it out here
+   💯Click in characters or in episodes github pages bug
+ [Web]( https://dnsue01.github.io/RickAndMortyReact/)
+
 ## 🚀 Features
 
 - **Custom Hooks**: Efficient state and effect management with custom hooks.
@@ -40,5 +44,4 @@ Open your browser and go to http://localhost:3000 to view the app.
 🔗 [Translation](https://cloud.google.com/translate?utm_source=google&utm_medium=cpc&utm_campaign=emea-es-all-en-dr-bkws-all-all-trial-e-gcp-1707574&utm_content=text-ad-none-any-dev_c-cre_574561266459-adgp_Hybrid+%7C+BKWS+-+EXA+%7C+Txt+-+AI+And+Machine+Learning+-+Translation+AI+-+v1-kwid_43700067795165130-kwd-59042905026-userloc_9049160&utm_term=kw_google%20translation%20api-net_g-plac_&&gad_source=1&gclid=CjwKCAjwk8e1BhALEiwAc8MHiIvDiFAG8EXkCXvamS6Z_iQV4sjvVRwUHA_FtAh-D-mXVAu_54bpexoCefMQAvD_BwE&gclsrc=aw.ds) 
 🔗 [MovieDB](https://www.themoviedb.org/?language=es-ES) 
 
-## 👀 Check it out here
 
