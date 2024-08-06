@@ -7,7 +7,7 @@ Welcome to the Rick and Morty React App! This project showcases characters from 
  [Web]( https://dnsue01.github.io/RickAndMortyReact/)
 
 ## ❤ Figma
-  [Figma](https://www.figma.com/design/C7STuI3PHwD2PntJLmS0Mt/RickandMorty?m=auto&t=mdfp3hFutrC6Dq9D-6)
+  😅I´m learning  [Figma](https://www.figma.com/design/C7STuI3PHwD2PntJLmS0Mt/RickandMorty?m=auto&t=mdfp3hFutrC6Dq9D-6)
 
 ## 🚀 Features
 
