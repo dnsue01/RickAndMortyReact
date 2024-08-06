@@ -25,10 +25,8 @@ Welcome to the Rick and Morty React App! This project showcases characters from 
 
 Clone the repository:
    
-   git clone https://github.com/dnsue01/rick-and-morty-react-app.git
-
-   cd rick-and-morty-react-app
-   
+   git clone https://github.com/dnsue01/RickAndMortyReact.git
+   cd RickAndMortyReact
    npm install
    
 ## 🚀 Usage
@@ -41,3 +39,6 @@ Open your browser and go to http://localhost:3000 to view the app.
 🔗 [Bootstrap](https://getbootstrap.com) 
 🔗 [Translation](https://cloud.google.com/translate?utm_source=google&utm_medium=cpc&utm_campaign=emea-es-all-en-dr-bkws-all-all-trial-e-gcp-1707574&utm_content=text-ad-none-any-dev_c-cre_574561266459-adgp_Hybrid+%7C+BKWS+-+EXA+%7C+Txt+-+AI+And+Machine+Learning+-+Translation+AI+-+v1-kwid_43700067795165130-kwd-59042905026-userloc_9049160&utm_term=kw_google%20translation%20api-net_g-plac_&&gad_source=1&gclid=CjwKCAjwk8e1BhALEiwAc8MHiIvDiFAG8EXkCXvamS6Z_iQV4sjvVRwUHA_FtAh-D-mXVAu_54bpexoCefMQAvD_BwE&gclsrc=aw.ds) 
 🔗 [MovieDB](https://www.themoviedb.org/?language=es-ES) 
+
+## 👀 Check it out here
+
