@@ -6,6 +6,9 @@ Welcome to the Rick and Morty React App! This project showcases characters from 
    💯Click in characters or in episodes github pages bug
  [Web]( https://dnsue01.github.io/RickAndMortyReact/)
 
+## ❤ Figma
+  [Figma](https://www.figma.com/design/C7STuI3PHwD2PntJLmS0Mt/RickandMorty?m=auto&t=mdfp3hFutrC6Dq9D-6)
+
 ## 🚀 Features
 
 - **Custom Hooks**: Efficient state and effect management with custom hooks.
@@ -24,6 +27,8 @@ Welcome to the Rick and Morty React App! This project showcases characters from 
 - **Translation APIs**: Implement language translations.
 - **MovieDB APIs**: More context for the episodes.
 - **Local Translation**: Manage translations with local JSON files.
+- **Axios**: Axios is a promise-based HTTP Client for node.js and the browser.
+- **Skeleton**: Css skeleton to charge the card.
 
 ## 📦 Installation
 
@@ -43,5 +48,6 @@ Open your browser and go to http://localhost:3000 to view the app.
 🔗 [Bootstrap](https://getbootstrap.com) 
 🔗 [Translation](https://cloud.google.com/translate?utm_source=google&utm_medium=cpc&utm_campaign=emea-es-all-en-dr-bkws-all-all-trial-e-gcp-1707574&utm_content=text-ad-none-any-dev_c-cre_574561266459-adgp_Hybrid+%7C+BKWS+-+EXA+%7C+Txt+-+AI+And+Machine+Learning+-+Translation+AI+-+v1-kwid_43700067795165130-kwd-59042905026-userloc_9049160&utm_term=kw_google%20translation%20api-net_g-plac_&&gad_source=1&gclid=CjwKCAjwk8e1BhALEiwAc8MHiIvDiFAG8EXkCXvamS6Z_iQV4sjvVRwUHA_FtAh-D-mXVAu_54bpexoCefMQAvD_BwE&gclsrc=aw.ds) 
 🔗 [MovieDB](https://www.themoviedb.org/?language=es-ES) 
+🔗 [Axios](https://axios-http.com/es/docs/intro) 
 
 
