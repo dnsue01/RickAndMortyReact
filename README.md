@@ -5,7 +5,7 @@ Welcome to the Rick and Morty React App! This project showcases characters from 
 ## 👀 Check it out here
   
   - 🚩 Click in characters or in episodes github pages bug
-  - 🚩 In the modal issue with azure key (Was temporal)
+  - 🚩 In the modal there is an issue with azure key (Was temporal)
   - [Check out the web]( https://dnsue01.github.io/RickAndMortyReact/)
 
 ## ❤ Figma
