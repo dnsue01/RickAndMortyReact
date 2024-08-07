@@ -3,8 +3,10 @@
 Welcome to the Rick and Morty React App! This project showcases characters from the Rick and Morty universe using the Rick and Morty API. The application utilizes various modern React features and libraries to enhance the user experience.
 
 ## 👀 Check it out here
-   💯Click in characters or in episodes github pages bug
- [Web]( https://dnsue01.github.io/RickAndMortyReact/)
+
+  - 🚩 Click in characters or in episodes github pages bug
+  - 🚩 In the modal issue with azure key (Was temporal)
+  - [Web]( https://dnsue01.github.io/RickAndMortyReact/)
 
 ## ❤ Figma
   😅I´m learning  [Figma](https://www.figma.com/design/C7STuI3PHwD2PntJLmS0Mt/RickandMorty?m=auto&t=mdfp3hFutrC6Dq9D-6)
